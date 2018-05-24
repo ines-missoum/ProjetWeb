@@ -2,6 +2,12 @@
 
 class utilisateur extends CI_Controller {
 
+
+        public function profil(){ 
+            $this->load->view('utilisateur/profil');
+        }
+
+
         public function page_connexion(){ 
             $this->load->view('utilisateur/form_connexion');
         }
@@ -30,16 +36,19 @@ class utilisateur extends CI_Controller {
         
         public function inscription(){       
 
-
-                  $this->form_validation->set_rules('passconf', 'Password Confirmation', 'matches[password]',
-                array(
-                'matches'     => "Les mots de passe ne correspondent pas"
-                        )
-                );
+              
 
                 $this->form_validation->set_rules('username', 'Username', 'min_length[5]|max_length[12]|is_unique[utilisateur.nom_utilisateur]',
                 array(
                 'is_unique'     => "Identifiant déjà utilisé"
+                        )
+                );
+
+                $this->form_validation->set_rules('password', 'Password', 'required');
+
+                 $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]',
+                array(
+                'matches'     => "Les mots de passe ne correspondent pas"
                         )
                 );
 

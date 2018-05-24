@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-sm-10 col-sm-offset-1">
 						<div class="login-container">
 							<div class="center">
-								<h1 class= "white"> ShareUrTalent</h1>
+								<h1 class= "white"> Share<span class="green bolder">Ur</span>Talent</h1>
 							</div>
 
 							<div class="space-6"></div>

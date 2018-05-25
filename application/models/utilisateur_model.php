@@ -25,14 +25,15 @@ class utilisateur_model extends CI_Model{
 	    public function insert($data) {
 	        
 
-		 	$this->db->set('nom_utilisateur', $data['nom_utilisateur'])
+		 	/*$this->db->set('nom_utilisateur', $data['nom_utilisateur'])
 		 	->set('mot_de_passe', $data['mot_de_passe'])
 		 	->set('nom', $data['nom'])
 		 	->set('prenom', $data['prenom'])
 		 	->set('ville', $data['ville'])
 		 	->set('nb_points', $data['nb_points'])
-		 	->insert($this->table);
+		 	->insert($this->table);*/
 
+			$this->db->insert('utilisateur', $data);
 
 		}
 	

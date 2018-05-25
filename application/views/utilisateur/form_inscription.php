@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Inscription</title>
+		<title>SUT-Inscription</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -68,43 +68,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<div class="widget-body">
 										<div class="widget-main">
 											<h4 class="header green lighter bigger">
-												
+												<i class="ace-icon fa fa-leaf green"></i>
 												Inscription
 											</h4>
 
 											<div class="space-6"></div>
-											<p> Entez les informations: </p>
+											<h5> Entez les informations: </h5>
 
 											<?php echo form_open('utilisateur/inscription'); ?>
 												<fieldset>
 													
 
 													<label class="block clearfix">
-														
+															<span class="block input-icon input-icon-right">
 															<input type="text" name="username" class="form-control" placeholder="Identifiant" value="<?php echo set_value('username') ?>" required />
+															<i class="ace-icon fa fa-user"></i>
+
 															<h6 style="color:red;"><?php echo form_error('username');?></h6>
-
+															</span>
 														
 													</label>
 
 													<label class="block clearfix">
-														
+															<span class="block input-icon input-icon-right">
 															<input type="password" name="password" class="form-control" placeholder="Mot de passe"  required/>
-															
+															<i class="ace-icon fa fa-lock"></i>
+															</span>
 														
 													</label>
 
 													<label class="block clearfix">
-														
+															<span class="block input-icon input-icon-right">
 															<input type="password" name="passconf" class="form-control" placeholder="Confirmer le mot de passe" required/>
+															<i class="ace-icon fa fa-retweet"></i>
 															<h6 style="color:red;" ><?php echo form_error('passconf');?></h6>
-														
+															</span>
 													</label>
 
 													<label class="block clearfix">
-														
+															<span class="block input-icon input-icon-right">
 															<input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo set_value('email') ?>" required />
-															
+															<i class="ace-icon fa fa-envelope"></i>
+															</span>
 													</label>
 
 													<label class="block clearfix">
@@ -131,7 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													<div class="clearfix">
 
 
-														<input type="submit" value="S'inscrire" class="width-65 pull-right btn btn-sm btn-success"/>
+														<input type="submit" value="S'inscrire" class="width-35 pull-right btn btn-sm btn-success"/>
 
 													</div>
 												</fieldset>
@@ -140,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<div class="toolbar center">
 											<a href="page_connexion" class="back-to-login-link">
-												
+												<i class="ace-icon fa fa-arrow-left"></i>
 												Connexion
 											</a>
 										</div>

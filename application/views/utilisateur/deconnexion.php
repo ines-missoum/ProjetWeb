@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>SUT-Oubli</title><!--a changer !!!!!!!!!!!!!!!!!!!!!!!!!-->
+		<title>SUT-Deconnexion</title><!--a changer !!!!!!!!!!!!!!!!!!!!!!!!!-->
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="col-sm-10 col-sm-offset-1">
 						<div class="login-container">
 							<div class="center">
-								<h1 class= "white"> ShareUrTalent</h1>
+								<h1 class= "white"> Share<span class="red bolder">Ur</span>Talent</h1>
 							</div>
 
 							<div class="space-6"></div>
@@ -68,32 +68,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<div class="widget-body">
 										<div class="widget-main">
 											<h4 class="header red lighter bigger">
-												
-												Retrouvez votre mot de passe
+												<i class="ace-icon fa fa-power-off"></i>
+												DECONNEXION
 											</h4>
 
 											<div class="space-6"></div>
-											<p>
-												Entez votre adresse mail pour recevoir les instructions
-											</p>
-
-											<?php echo form_open('utilisateur/oubli_mdp'); ?>
-												<fieldset>
-													<label class="block clearfix">
-														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
-															
-														</span>
-													</label>
-
-													<div class="clearfix">
-														<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
-															
-															<span class="bigger-110">Envoyer!</span>
-														</button>
-													</div>
-												</fieldset>
-											</form>
+											<h5>
+												Vous vous êtes déconnecté avec succès.
+											</h5>
+											<h5>A bientôt !</h5>
+											
 										</div><!-- /.widget-main -->
 
 										<div class="toolbar center">

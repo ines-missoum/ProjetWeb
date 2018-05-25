@@ -4,9 +4,19 @@ class utilisateur extends CI_Controller {
 
 
         public function profil(){ 
-            $this->load->view('utilisateur/profil');
+
+        // On stocke notre page dans la variable $page
+        $page = $this->load->view('utilisateur/profil','',true);
+
+        // On affiche notre page avec le template
+        $this->load->view('template', array('page' => $page));
+
+            
         }
 
+        public function deconnexion(){ 
+            $this->load->view('utilisateur/deconnexion');
+        }
 
         public function page_connexion(){ 
             $this->load->view('utilisateur/form_connexion');

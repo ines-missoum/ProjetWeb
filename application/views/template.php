@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
@@ -13,6 +13,13 @@
 		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/jquery-ui.custom.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/chosen.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/bootstrap-datepicker3.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/bootstrap-timepicker.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/daterangepicker.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/bootstrap-colorpicker.min.css" />
 
 		<!-- text fonts -->
 		<link rel="stylesheet" href="<?php echo base_url() ?>ace-master/assets/css/fonts.googleapis.com.css" />
@@ -43,8 +50,8 @@
 		<![endif]-->
 	</head>
 
-	<body class="skin-2">
-		<div id="navbar" class="navbar navbar-default          ace-save-state">
+	<body class="skin-2" >
+		<div id="navbar" class="navbar navbar-default ace-save-state">
 			<div class="navbar-container ace-save-state" id="navbar-container">
 				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
 					<span class="sr-only">Toggle sidebar</span>
@@ -198,7 +205,7 @@
 				</div><!-- /.sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
-					<li class="active">
+					<li class="">
 						<a href="utilisateur/profil">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Accueil </span>
@@ -409,31 +416,11 @@
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
 							<span class="menu-text"> Créer un partage </span>
-
-							<b class="arrow fa fa-angle-down"></b>
 						</a>
 
 						<b class="arrow"></b>
 
-						<ul class="submenu">
-							<li class="">
-								<a href="tables.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									menu 1
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="jqgrid.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									menu 2
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
+						
 					</li>
 
 					<li class="">
@@ -533,38 +520,10 @@
 				</div>
 			</div>
 
-			<div class="main-content">
-				<div class="main-content-inner">
-					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-
-						<div class ="center bigger-120 bolder">Accueil</div>
-
-						<div class="nav-search" id="nav-search">
-							<form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-							</form>
-						</div><!-- /.nav-search -->
-					</div>
-
-					<div class="page-content">
-					
-							</div><!-- /.ace-settings-box -->
-						</div><!-- /.ace-settings-container -->
-
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-										<!-- La vue s'affichera ici -->
-           									 <?php echo $page; ?>
-								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
+			
+				<?php echo $page; ?>
+								
+							
 
 			<div class="footer">
 				<div class="footer-inner">
@@ -577,9 +536,8 @@
 				</div>
 			</div>
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
+
+			
 		</div><!-- /.main-container -->
 
 <!-- basic scripts -->
@@ -608,11 +566,96 @@
 		<script src="<?php echo base_url() ?>ace-master/assets/js/jquery.flot.pie.min.js"></script>
 		<script src="<?php echo base_url() ?>ace-master/assets/js/jquery.flot.resize.min.js"></script>
 
+
+		<script src="<?php echo base_url() ?>ace-master/assets/js/chosen.jquery.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/spinbox.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/bootstrap-datepicker.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/bootstrap-timepicker.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/moment.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/daterangepicker.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/bootstrap-colorpicker.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/jquery.knob.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/autosize.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/jquery.inputlimiter.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/jquery.maskedinput.min.js"></script>
+		<script src="<?php echo base_url() ?>ace-master/assets/js/bootstrap-tag.min.js"></script>
+
 		<!-- ace scripts -->
 		<script src="<?php echo base_url() ?>ace-master/assets/js/ace-elements.min.js"></script>
 		<script src="<?php echo base_url() ?>ace-master/assets/js/ace.min.js"></script>
 		<!-- inline scripts related to this page -->
-
+			<script type="text/javascript">
+			jQuery(function($) {
+			
+			
+				if(!ace.vars['touch']) {
+					$('.chosen-select').chosen({allow_single_deselect:true}); 
+					//resize the chosen on window resize
+			
+					$(window)
+					.off('resize.chosen')
+					.on('resize.chosen', function() {
+						$('.chosen-select').each(function() {
+							 var $this = $(this);
+							 $this.next().css({'width': $this.parent().width()});
+						})
+					}).trigger('resize.chosen');
+					//resize chosen on sidebar collapse/expand
+					$(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+						if(event_name != 'sidebar_collapsed') return;
+						$('.chosen-select').each(function() {
+							 var $this = $(this);
+							 $this.next().css({'width': $this.parent().width()});
+						})
+					});
+			
+			
+					$('#chosen-multiple-style .btn').on('click', function(e){
+						var target = $(this).find('input[type=radio]');
+						var which = parseInt(target.val());
+						if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+						 else $('#form-field-select-4').removeClass('tag-input-style');
+					});
+				}
+			
+				$('#spinner2').ace_spinner({value:0,min:1,max:10,step:1, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
+				
+				//datepicker plugin
+				//link
+				$('.date-picker').datepicker({
+					autoclose: true,
+					todayHighlight: true
+				})
+				//show datepicker when clicking on the icon
+				.next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+			
+			
+			
+				
+				$('.timepicker').timepicker({
+					minuteStep: 1,
+					showSeconds: false,
+					showMeridian: false,
+					disableFocus: true,
+					icons: {
+						up: 'fa fa-chevron-up',
+						down: 'fa fa-chevron-down'
+					}
+				}).on('focus', function() {
+					$('.timepicker').timepicker('showWidget');
+				}).next().on(ace.click_event, function(){
+					$(this).prev().focus();
+				});
+				
+				
+			
+				
+				
+			});
+		</script>
 		
 	</body>
 </html>

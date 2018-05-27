@@ -113,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<div class="toolbar clearfix">
 											<div>
-												<a href="oubli_mdp"  class="forgot-password-link">
+												<a href="<?php echo base_url() ?>utilisateur/oubli_mdp"  class="forgot-password-link">
 													<i class="ace-icon fa fa-arrow-left"></i>
 													Mot de passe oublié
 													
@@ -121,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</div>
 
 											<div>
-												<a href="inscription"  class="user-signup-link">
+												<a href="<?php echo base_url() ?>utilisateur/inscription"  class="user-signup-link">
 													Je veux m'inscrire
 													<i class="ace-icon fa fa-arrow-right"></i>
 												</a>

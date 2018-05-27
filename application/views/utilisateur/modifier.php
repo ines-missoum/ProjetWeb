@@ -3,8 +3,8 @@
 													<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 														<ul class="breadcrumb">
 															<li>
-																<i class="menu-icon fa fa-user"></i>
-																<a href="#">Mon profile</a>
+																<i class="menu-icon fa fa-cog"></i>
+																<a href="<?php echo base_url() ?>utilisateur/modifier">Modifier</a>
 															</li>
 														</ul><!-- /.breadcrumb -->
 
@@ -12,10 +12,10 @@
 											
 											<div class="page-header">
 												<h1>
-													Mon profile
+													Modifier votre profile
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
-														Accédez à toutes vos informations personnelles et modifiez les
+														Vous pouvez mettre à jour vos informations personnelles
 													</small>
 												</h1>
 											</div><!-- /.page-header -->

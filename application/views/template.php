@@ -134,7 +134,7 @@
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li class="center">
-									<a href="#">
+									<a href="<?php echo base_url() ?>utilisateur/modifier">
 									<i class="ace-icon fa fa-cog"></i>
 
 										Modifier
@@ -142,7 +142,7 @@
 								</li>
 
 								<li class="center">
-									<a href="profile.html">
+									<a href="<?php echo base_url() ?>utilisateur/profil">
 										<i class="ace-icon fa fa-user"></i>
 										Mon profile
 									</a>
@@ -151,7 +151,7 @@
 								<li class="divider"></li>
 
 								<li class="center">
-									<a href="deconnexion">
+									<a href="<?php echo base_url() ?>utilisateur/deconnexion">
 									<i class="ace-icon fa fa-power-off"></i>
 
 										Deconnexion
@@ -206,7 +206,7 @@
 
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="utilisateur/profil">
+						<a href="<?php echo base_url() ?>utilisateur/index">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Accueil </span>
 						</a>
@@ -215,10 +215,10 @@
 					</li>
 
 					<li class="">
-						<a href="#" class="dropdown-toggle">
+						<a href="" class="dropdown-toggle">
 							<i class="menu-icon fa fa-calendar "></i>
 							<span class="menu-text">
-								Cette semaine
+								A venir
 							</span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -228,76 +228,19 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="#" class="dropdown-toggle">
+								<a href="<?php echo base_url() ?>partage/a_venir" >
 									<i class="menu-icon fa fa-caret-right"></i>
 
-									Layouts
-									<b class="arrow fa fa-angle-down"></b>
+									Tout
+									
 								</a>
 
-								<b class="arrow"></b>
-
-								<ul class="submenu">
-									<li class="">
-										<a href="top-menu.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Top Menu
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="two-menu-1.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Two Menus 1
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="two-menu-2.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Two Menus 2
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="mobile-menu-1.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Default Mobile Menu
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="mobile-menu-2.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Mobile Menu 2
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="mobile-menu-3.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Mobile Menu 3
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-								</ul>
 							</li>
 
 							<li class="">
 								<a href="typography.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Typography
+									partages à offrir
 								</a>
 
 								<b class="arrow"></b>
@@ -306,114 +249,18 @@
 							<li class="">
 								<a href="elements.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Elements
+									partages à recevoir
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
-							<li class="">
-								<a href="buttons.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Buttons &amp; Icons
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="content-slider.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Content Sliders
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="treeview.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Treeview
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="jquery-ui.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									jQuery UI
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="nestable-list.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Nestable Lists
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="#" class="dropdown-toggle">
-									<i class="menu-icon fa fa-caret-right"></i>
-
-									Three Level Menu
-									<b class="arrow fa fa-angle-down"></b>
-								</a>
-
-								<b class="arrow"></b>
-
-								<ul class="submenu">
-									<li class="">
-										<a href="#">
-											<i class="menu-icon fa fa-leaf green"></i>
-											Item #1
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="#" class="dropdown-toggle">
-											<i class="menu-icon fa fa-pencil orange"></i>
-
-											4th level
-											<b class="arrow fa fa-angle-down"></b>
-										</a>
-
-										<b class="arrow"></b>
-
-										<ul class="submenu">
-											<li class="">
-												<a href="#">
-													<i class="menu-icon fa fa-plus purple"></i>
-													Add Product
-												</a>
-
-												<b class="arrow"></b>
-											</li>
-
-											<li class="">
-												<a href="#">
-													<i class="menu-icon fa fa-eye pink"></i>
-													View Products
-												</a>
-
-												<b class="arrow"></b>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
+						
 						</ul>
 					</li>
 
 					<li class="">
-						<a href="#" class="dropdown-toggle">
+						<a href="<?php echo base_url() ?>partage/creation_partage">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
 							<span class="menu-text"> Créer un partage </span>
 						</a>
@@ -424,9 +271,18 @@
 					</li>
 
 					<li class="">
+						<a href="<?php echo base_url() ?>partage/assister_partage">
+							<i class="menu-icon fa fa-globe"></i>
+							<span class="menu-text"> Assister à un partage </span>
+						</a>
+
+						
+					</li>
+
+					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Mes talents partagés </span>
+							<span class="menu-text"> Historique </span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -434,10 +290,20 @@
 						<b class="arrow"></b>
 
 						<ul class="submenu">
+
+							<li class="">
+								<a href="<?php echo base_url() ?>partage/historique">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Tout
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
 							<li class="">
 								<a href="form-elements.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									menu 1
+									Partages offerts
 								</a>
 
 								<b class="arrow"></b>
@@ -446,7 +312,7 @@
 							<li class="">
 								<a href="form-elements-2.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									menu 2
+									Partages reçus
 								</a>
 
 								<b class="arrow"></b>
@@ -455,15 +321,6 @@
 
 							
 						</ul>
-					</li>
-
-					<li class="">
-						<a href="widgets.html">
-							<i class="menu-icon fa fa-globe"></i>
-							<span class="menu-text"> Assister à un partage </span>
-						</a>
-
-						
 					</li>
 
 
@@ -484,32 +341,22 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="faq.html">
+								<a href="<?php echo base_url() ?>note/a_noter">
 									<i class="menu-icon fa fa-caret-right"></i>
-									menu 1
+									A noter
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="error-404.html">
+								<a href="<?php echo base_url() ?>note/mes_notes">
 									<i class="menu-icon fa fa-caret-right"></i>
-									menu 2
+									Mes notes
 								</a>
 
 								<b class="arrow"></b>
 							</li>
-
-							<li class="">
-								<a href="error-500.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									menu 3
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
 							
 						</ul>
 					</li>

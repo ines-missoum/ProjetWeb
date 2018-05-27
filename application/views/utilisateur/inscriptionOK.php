@@ -6,7 +6,7 @@
 
 <h3>Your form was successfully submitted!</h3>
 
-<p><?php echo anchor('utilisateur/inscription', 'Try it again!'); ?></p>
+<p><?php echo anchor('<?php echo base_url() ?>utilisateur/inscription', 'Try it again!'); ?></p>
 
 </body>
 </html>

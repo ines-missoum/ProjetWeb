@@ -144,7 +144,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</div>
 
 										<div class="toolbar center">
-											<a href="page_connexion" class="back-to-login-link">
+											<a href="<?php echo base_url() ?>utilisateur/page_connexion" class="back-to-login-link">
 												<i class="ace-icon fa fa-arrow-left"></i>
 												Connexion
 											</a>

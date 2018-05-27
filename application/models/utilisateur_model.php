@@ -10,6 +10,7 @@ class utilisateur_model extends CI_Model{
 	        
 	    } 
 
+
 	     public function verif_connexion($data){ 
 	    
 
@@ -36,6 +37,17 @@ class utilisateur_model extends CI_Model{
 			$this->db->insert('utilisateur', $data);
 
 		}
+
+		/*public function get_nom(){ 
+	    
+
+		 	$result = $this->db->select('prenom')
+		 						->from($this->table)	
+		 						->where('nom_utilisateur',get_cookie('cookieUtilisateur'))
+		 						->get()
+		 						->result();
+		 	 return $result;	
+    	}*/
 	
 
 

@@ -3,19 +3,21 @@
 													<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 														<ul class="breadcrumb">
 															<li>
-																<i class="menu-icon fa fa-user"></i>
-																<a href="#">Mon profile</a>
+																<i class="menu-icon fa fa-star"></i>
+																<a href="#">Notes</a>
 															</li>
+
+															<li class="active">Mes notes</li>
 														</ul><!-- /.breadcrumb -->
 
 													</div>
 											
 											<div class="page-header">
 												<h1>
-													Mon profile
+													Mes notes 
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
-														Accédez à toutes vos informations personnelles et modifiez les
+														Voici les notes que vous avez reçues suite aux partages que vous avez offerts
 													</small>
 												</h1>
 											</div><!-- /.page-header -->

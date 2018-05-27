@@ -3,8 +3,8 @@
 													<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 														<ul class="breadcrumb">
 															<li>
-																<i class="menu-icon fa fa-user"></i>
-																<a href="#">Mon profile</a>
+																<i class="menu-icon fa fa-list"></i>
+																<a href="#">Historique</a>
 															</li>
 														</ul><!-- /.breadcrumb -->
 
@@ -12,10 +12,11 @@
 											
 											<div class="page-header">
 												<h1>
-													Mon profile
+													Vos anciens partages 
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
-														Accédez à toutes vos informations personnelles et modifiez les
+														Petits souvenirs ... vous pouvez consulter ici toutes les informations relatives à vos anciens partages
+
 													</small>
 												</h1>
 											</div><!-- /.page-header -->

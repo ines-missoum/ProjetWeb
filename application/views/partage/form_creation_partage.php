@@ -26,7 +26,8 @@
 											<div class="row">
 											<div class="col-xs-12">
 											
-											<form class="form-horizontal" role="form" action ="partage/creation_partage">
+											<?php /*echo form_open('partage/creation_partage');*/ ?>
+											<form class="form-horizontal" role="form" method ="post" action ="creation_partage">
 											<fieldset>
 											<div class="form-group">
 												<label class="col-sm-3 control-label no-padding-right"> Intitulé du partage </label>
@@ -44,7 +45,7 @@
 
 															
 															<div class="col-sm-4">
-															<select class="chosen-select form-control" data-placeholder="Choisissez une catégorie" required >
+															<select name ="categorie" class="chosen-select form-control" data-placeholder="Choisissez une catégorie" required >
 
 															<?php 
 															
@@ -114,7 +115,7 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" > Lieu du partage </label>
+												<label class="col-sm-3 control-label no-padding-right" > Lieu du partage(rue) </label>
 
 													<div class="col-sm-9">
 													<input type="text" name="rue"  placeholder="Rue" class="col-xs-10 col-sm-5" value="<?php echo set_value('rue') ?>" required />
@@ -122,7 +123,7 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" > Lieu du partage </label>
+												<label class="col-sm-3 control-label no-padding-right" > Lieu du partage(ville) </label>
 
 													<div class="col-sm-9">
 													<input type="text" name="ville"  placeholder="Ville" class="col-xs-10 col-sm-5" value="<?php echo set_value('ville') ?>" required />
@@ -143,7 +144,7 @@
 												<label class="col-sm-3 control-label no-padding-right" > A noter </label>
 
 													<div class="col-sm-9">
-													<textarea name="description"  rows="3" class="col-xs-10 col-sm-5" placeholder="Vous pouvez ajouter un commentaire adressé aux participants que vous pourez modifier par la suite..."  value="<?php echo set_value('description') ?>" >
+													<textarea name="commentaire"  rows="3" class="col-xs-10 col-sm-5" placeholder="Vous pouvez ajouter un commentaire adressé aux participants que vous pourez modifier par la suite..."  value="<?php echo set_value('description') ?>" >
 													</textarea>
 													</div>
 

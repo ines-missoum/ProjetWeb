@@ -25,7 +25,7 @@
 
 											<div class="row">
 											<div class="col-xs-12">
-
+											
 											<form class="form-horizontal" role="form" action ="partage/creation_partage">
 											<fieldset>
 											<div class="form-group">
@@ -44,10 +44,17 @@
 
 															
 															<div class="col-sm-4">
-															<select class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choisissez une catégorie" required >
-																<option value="">  </option>
-																<option value="AL">Alabama</option>
-																<option value="AK">Alaska</option>
+															<select class="chosen-select form-control" data-placeholder="Choisissez une catégorie" required >
+
+															<?php 
+															
+																foreach ($cat as $item ){
+																	
+																	echo "<option value = $item->num_categorie>$item->nom_categorie</option>";
+																}
+
+															?>
+																
 
 															</select>
 														</div>
@@ -57,7 +64,7 @@
 												<label class="col-sm-3 control-label no-padding-right" > Nombre maximum de participants </label>
 
 													<div class="col-sm-9">
-														<input type="text" id="spinner2" name="nb_max" required />
+														<input type="number" id="spinner2" name="nb_max" required />
 														<div class="space-6"></div>
 												
 													</div>
@@ -70,7 +77,7 @@
 														
 															<div class=" col-sm-4">
 																<div class="input-group">
-																	<input class="form-control date-picker" name="jour" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy"  required />
+																	<input class="form-control date-picker" name="jour" id="id-date-picker-1" type="date" data-date-format="dd-mm-yyyy"  required />
 																	<span class="input-group-addon">
 																		<i class="fa fa-calendar bigger-110"></i>
 																	</span>
@@ -83,7 +90,7 @@
 													<label class="col-sm-3 control-label no-padding-right" > Heure de début du partage </label>
 													<div class="col-sm-4">
 														<div class="input-group bootstrap-timepicker">
-															<input name="h_debut" type="text" class="form-control timepicker" required />
+															<input name="h_debut" type="time" class="form-control timepicker" required />
 															<span class="input-group-addon" required>
 																<i class="fa fa-clock-o bigger-110"></i>
 															</span>
@@ -98,7 +105,7 @@
 													<label class="col-sm-3 control-label no-padding-right" > Heure de fin du partage </label>
 													<div class="col-sm-4">
 														<div class="input-group bootstrap-timepicker">
-															<input name="h_fin"  type="text" class="form-control timepicker" required />
+															<input name="h_fin"  type="time" class="form-control timepicker" required />
 															<span class="input-group-addon">
 																<i class="fa fa-clock-o bigger-110"></i>
 															</span>
@@ -110,7 +117,15 @@
 												<label class="col-sm-3 control-label no-padding-right" > Lieu du partage </label>
 
 													<div class="col-sm-9">
-													<input type="text" name="adresse"  placeholder="Adresse" class="col-xs-10 col-sm-5" value="<?php echo set_value('adresse') ?>" required />
+													<input type="text" name="rue"  placeholder="Rue" class="col-xs-10 col-sm-5" value="<?php echo set_value('rue') ?>" required />
+													</div>
+											</div>
+
+											<div class="form-group">
+												<label class="col-sm-3 control-label no-padding-right" > Lieu du partage </label>
+
+													<div class="col-sm-9">
+													<input type="text" name="ville"  placeholder="Ville" class="col-xs-10 col-sm-5" value="<?php echo set_value('ville') ?>" required />
 													</div>
 											</div>
 

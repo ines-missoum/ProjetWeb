@@ -7,14 +7,17 @@ class utilisateur extends CI_Controller {
             
 
             if( get_cookie('cookieUtilisateur')!=''){
-
+                
                 //$prenom_utilisateur = $this->utilisateur_model->get_nom();
 
                 // On stocke notre page dans la variable $page
                 $page = $this->load->view('utilisateur/accueil','',true);
 
+                $data = array(
+                    'page' => $page
+                );
                 // On affiche notre page avec le template
-                $this->load->view('template', array('page' => $page/*, 'prenom_utilisateur' => $prenom_utilisateur */));
+                $this->load->view('template', $data);
 
             }else{
 
@@ -71,6 +74,7 @@ class utilisateur extends CI_Controller {
             if( get_cookie('cookieUtilisateur')==''){
 
               $this->load->view('utilisateur/form_connexion');  
+
             }else{
 
                 $this->index();
@@ -81,9 +85,14 @@ class utilisateur extends CI_Controller {
         public function verif_connexion(){ 
 
            if( get_cookie('cookieUtilisateur')==''){
+
+                define("PREFIXE", "mysteremystere");
+                define("SUFFIXE", "etbouledegomme");
+                $mdpCrypte= md5( sha1(PREFIXE) . htmlspecialchars($_POST['password']) . sha1(SUFFIXE) );//sha1, md5 : algo de hachages (md5=50caracteres)
+
                 $data=array(
                             "nom_utilisateur" => htmlspecialchars($_POST['username']),
-                            "mot_de_passe"=> htmlspecialchars($_POST['password'])
+                            "mot_de_passe"=> $mdpCrypte
                         );
 
                 $result = $this->utilisateur_model->verif_connexion($data);
@@ -91,10 +100,10 @@ class utilisateur extends CI_Controller {
                 if(empty($result)){
                     $this->load->view('utilisateur/form_connexion');
                 }else{
-                    set_cookie('cookieUtilisateur', $data['nom_utilisateur'], '300');//86400 pour 24h (duree de vie du cookie)
+                    set_cookie('cookieUtilisateur', $data['nom_utilisateur'], '86400');//86400 pour 24h (duree de vie du cookie)
                     
                         // On stocke notre page dans la variable $page
-                        $page = $this->load->view('utilisateur/modifier','',true);
+                        $page = $this->load->view('utilisateur/accueil','',true);
 
                         // On affiche notre page avec le template
                         $this->load->view('template', array('page' => $page));
@@ -140,14 +149,20 @@ class utilisateur extends CI_Controller {
                             )
                     );
 
+
                     if ($this->form_validation->run() == FALSE){
+                    
 
                             $this->load->view('utilisateur/form_inscription');
                     }else{
-                           
+
+                        define("PREFIXE", "mysteremystere");
+                        define("SUFFIXE", "etbouledegomme");
+                        $mdpCrypte= md5( sha1(PREFIXE) . htmlspecialchars($_POST['password']) . sha1(SUFFIXE) );//sha1, md5 : algo de hachages (md5=50caracteres)
+
                            $data=array(
                             "nom_utilisateur" => htmlspecialchars($_POST['username']),
-                            "mot_de_passe"=> htmlspecialchars($_POST['password']),
+                            "mot_de_passe"=> $mdpCrypte,
                              "nom"=> htmlspecialchars($_POST['nom']),
                              "prenom" => htmlspecialchars($_POST['prenom']),
                              "ville"=> htmlspecialchars($_POST['ville']),

@@ -127,8 +127,8 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="<?php echo base_url() ?>ace-master/assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>Bienvenu,</small>
-									Jason
+									<small>Bienvenu</small>
+									<?php echo  get_cookie('cookieUtilisateur'); ?>
 								</span>
 							</a>
 
@@ -367,7 +367,14 @@
 				</div>
 			</div>
 
-			
+			<?php
+
+			/*foreach ($cat as $item ){
+																	
+			echo $item->nom_categorie;
+
+			}*/
+			 ?>
 				<?php echo $page; ?>
 								
 							
@@ -433,54 +440,10 @@
 		<script src="<?php echo base_url() ?>ace-master/assets/js/ace.min.js"></script>
 		<!-- inline scripts related to this page -->
 			<script type="text/javascript">
-			jQuery(function($) {
 			
-			
-				if(!ace.vars['touch']) {
-					$('.chosen-select').chosen({allow_single_deselect:true}); 
-					//resize the chosen on window resize
-			
-					$(window)
-					.off('resize.chosen')
-					.on('resize.chosen', function() {
-						$('.chosen-select').each(function() {
-							 var $this = $(this);
-							 $this.next().css({'width': $this.parent().width()});
-						})
-					}).trigger('resize.chosen');
-					//resize chosen on sidebar collapse/expand
-					$(document).on('settings.ace.chosen', function(e, event_name, event_val) {
-						if(event_name != 'sidebar_collapsed') return;
-						$('.chosen-select').each(function() {
-							 var $this = $(this);
-							 $this.next().css({'width': $this.parent().width()});
-						})
-					});
-			
-			
-					$('#chosen-multiple-style .btn').on('click', function(e){
-						var target = $(this).find('input[type=radio]');
-						var which = parseInt(target.val());
-						if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
-						 else $('#form-field-select-4').removeClass('tag-input-style');
-					});
-				}
 			
 				$('#spinner2').ace_spinner({value:0,min:1,max:10,step:1, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
 				
-				//datepicker plugin
-				//link
-				$('.date-picker').datepicker({
-					autoclose: true,
-					todayHighlight: true
-				})
-				//show datepicker when clicking on the icon
-				.next().on(ace.click_event, function(){
-					$(this).prev().focus();
-				});
-			
-			
-			
 				
 				$('.timepicker').timepicker({
 					minuteStep: 1,

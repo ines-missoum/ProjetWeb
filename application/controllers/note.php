@@ -7,6 +7,7 @@ class note extends CI_Controller {
 
             if( get_cookie('cookieUtilisateur')!=''){
 
+                
                 // On stocke notre page dans la variable $page
                 $page = $this->load->view('note/mes_notes','',true);
 
@@ -15,7 +16,7 @@ class note extends CI_Controller {
 
              }else{
 
-                $this->page_connexion();
+                redirect('utilisateur/index');
                 
             } 
             
@@ -33,7 +34,7 @@ class note extends CI_Controller {
 
              }else{
 
-                $this->page_connexion();
+                redirect('utilisateur/index');
                 
             } 
 

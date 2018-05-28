@@ -21,7 +21,14 @@
 											</div><!-- /.page-header -->
 											<div class="page-content">
 																	
+												<?php 
+															
+																foreach ($partage as $item ){
+																	
+																	echo $item->intitule;
+																}
 
+															?>
 
 											<div class="row">
 											<div class="col-xs-12">

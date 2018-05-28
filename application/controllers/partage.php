@@ -1,21 +1,28 @@
 <?php
 
-class partage extends CI_Controller {
-
+class partage extends CI_Controller { 
+                
 
         public function creation_partage(){
 
-            if( get_cookie('cookieUtilisateur')!=''){ 
+            if( get_cookie('cookieUtilisateur')!=''){  
+
+                $categories['cat']=$this->categorie_model->categories();
+
+                
 
                 // On stocke notre page dans la variable $page
-                $page = $this->load->view('partage/form_creation_partage','',true);
+                $page = $this->load->view('partage/form_creation_partage',$categories,true);
+
 
                 // On affiche notre page avec le template
                 $this->load->view('template', array('page' => $page));
 
+
+
             }else{
 
-                $this->page_connexion();
+               redirect('utilisateur/index');
                 
             } 
 
@@ -26,15 +33,17 @@ class partage extends CI_Controller {
 
             if( get_cookie('cookieUtilisateur')!=''){
 
+                $result['partage'] = $this->partage_model->a_venir();
+
                 // On stocke notre page dans la variable $page
-                $page = $this->load->view('partage/a_venir','',true);
+                $page = $this->load->view('partage/a_venir',$result,true);
 
                 // On affiche notre page avec le template
                 $this->load->view('template', array('page' => $page));
 
             }else{
 
-                $this->page_connexion();
+                redirect('utilisateur/index');
                 
             } 
 
@@ -54,7 +63,7 @@ class partage extends CI_Controller {
 
             }else{
 
-                $this->page_connexion();
+                redirect('utilisateur/index');
                 
             } 
 
@@ -73,7 +82,7 @@ class partage extends CI_Controller {
 
             }else{
 
-                $this->page_connexion();
+                redirect('utilisateur/index');
                 
             } 
 

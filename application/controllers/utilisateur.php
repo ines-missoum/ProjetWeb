@@ -1,6 +1,6 @@
 <?php
 
-class utilisateur extends CI_Controller {
+class Utilisateur extends CI_Controller {
 
         public function index(){ 
 
@@ -63,9 +63,8 @@ class utilisateur extends CI_Controller {
 
         public function deconnexion(){ 
 
-
             delete_cookie('cookieUtilisateur');
-            $this->load->view('utilisateur/deconnexion');
+            $this->load->view('Utilisateur/deconnexion');
              
         }
 
@@ -95,12 +94,14 @@ class utilisateur extends CI_Controller {
                             "mot_de_passe"=> $mdpCrypte
                         );
 
-                $result = $this->utilisateur_model->verif_connexion($data);
+                $result = $this->Utilisateur_model->verif_connexion($data);
 
                 if(empty($result)){
                     $this->load->view('utilisateur/form_connexion');
                 }else{
-                    set_cookie('cookieUtilisateur', $data['nom_utilisateur'], '86400');//86400 pour 24h (duree de vie du cookie)
+
+                    $valeur_crypte= $this->encryption->encrypt($data['nom_utilisateur']);
+                    set_cookie('cookieUtilisateur', $valeur_crypte , '86400');//86400 pour 24h (duree de vie du cookie)
                     
                         // On stocke notre page dans la variable $page
                         $page = $this->load->view('utilisateur/accueil','',true);
@@ -143,7 +144,7 @@ class utilisateur extends CI_Controller {
 
                     $this->form_validation->set_rules('password', 'Password', 'required');
 
-                     $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]',
+                    $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]',
                     array(
                     'matches'     => "Les mots de passe ne correspondent pas"
                             )
@@ -170,7 +171,7 @@ class utilisateur extends CI_Controller {
                             );
 
                           
-                           $this->utilisateur_model->insert($data);
+                           $this->Utilisateur_model->insert($data);
                            $this->load->view('utilisateur/inscriptionOK');
                     }
 

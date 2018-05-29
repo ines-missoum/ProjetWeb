@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</div><!-- /.widget-main -->
 
 										<div class="toolbar center">
-											<a href="<?php echo base_url() ?>utilisateur/page_connexion"  class="back-to-login-link">
+											<a href="<?php echo base_url() ?>Utilisateur/page_connexion"  class="back-to-login-link">
 												Connexion
 												
 											</a>

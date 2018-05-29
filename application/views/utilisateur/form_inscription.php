@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<div class="space-6"></div>
 											<h5> Entez les informations: </h5>
 
-											<?php echo form_open('utilisateur/inscription'); ?>
+											<?php echo form_open('Utilisateur/inscription'); ?>
 												<fieldset>
 													
 
@@ -144,7 +144,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</div>
 
 										<div class="toolbar center">
-											<a href="<?php echo base_url() ?>utilisateur/page_connexion" class="back-to-login-link">
+											<a href="<?php echo base_url() ?>Utilisateur/page_connexion" class="back-to-login-link">
 												<i class="ace-icon fa fa-arrow-left"></i>
 												Connexion
 											</a>

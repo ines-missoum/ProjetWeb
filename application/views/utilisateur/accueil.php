@@ -12,7 +12,7 @@
 											
 											<div class="page-header">
 												<h1>
-													Bonjour <?php echo get_cookie('cookieUtilisateur'); ?>
+													Bonjour <?php echo $this->encryption->decrypt(get_cookie('cookieUtilisateur')); ?>
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
 														Share<span class="pink bolder">Ur</span>Talent est heureux de vous compter parmi ses membres!

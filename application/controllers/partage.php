@@ -1,6 +1,6 @@
 <?php
 
-class partage extends CI_Controller { 
+class Partage extends CI_Controller { 
                 
 
         public function creation_partage(){
@@ -15,7 +15,7 @@ class partage extends CI_Controller {
                     if ($this->form_validation->run() == FALSE){
                     
 
-                        $categories['cat']=$this->categorie_model->categories();
+                        $categories['cat']=$this->Categorie_model->categories();
 
 
                         // On stocke notre page dans la variable $page
@@ -28,6 +28,8 @@ class partage extends CI_Controller {
 
                     }else{
 
+                           $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
                            $data=array(
                             "intitule" => htmlspecialchars($_POST['intitule']),
                             "nb_max_personne"=> htmlspecialchars($_POST['nb_max']),
@@ -38,12 +40,12 @@ class partage extends CI_Controller {
                              "ville"=> htmlspecialchars($_POST['ville']),
                              "description" => htmlspecialchars($_POST['description']),
                              "commentaire_partage"=> htmlspecialchars($_POST['commentaire']),
-                             "nom_utilisateur" => get_cookie('cookieUtilisateur'),
+                             "nom_utilisateur" => $valeur_decrypte,
                              "num_categorie"=> htmlspecialchars($_POST['categorie'])
                             );
 
                           
-                           $this->partage_model->insert($data);
+                           $this->Partage_model->insert($data);
                            $this->a_venir();
                     }
 
@@ -51,7 +53,7 @@ class partage extends CI_Controller {
 
             }else{
 
-               redirect('utilisateur/index');
+               redirect('Utilisateur/index');
                 
             } 
 
@@ -62,7 +64,9 @@ class partage extends CI_Controller {
 
             if( get_cookie('cookieUtilisateur')!=''){
 
-                $result['partage'] = $this->partage_model->a_venir();
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['partage'] = $this->Partage_model->a_venir($valeur_decrypte);
 
                 // On stocke notre page dans la variable $page
                 $page = $this->load->view('partage/a_venir',$result,true);
@@ -72,7 +76,7 @@ class partage extends CI_Controller {
 
             }else{
 
-                redirect('utilisateur/index');
+                redirect('Utilisateur/index');
                 
             } 
 
@@ -92,7 +96,7 @@ class partage extends CI_Controller {
 
             }else{
 
-                redirect('utilisateur/index');
+                redirect('Utilisateur/index');
                 
             } 
 
@@ -111,7 +115,7 @@ class partage extends CI_Controller {
 
             }else{
 
-                redirect('utilisateur/index');
+                redirect('Utilisateur/index');
                 
             } 
 

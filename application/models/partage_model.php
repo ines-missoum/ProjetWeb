@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class partage_model extends CI_Model{
+class Partage_model extends CI_Model{
     
 	    protected $table='partage';
 
@@ -9,11 +9,11 @@ class partage_model extends CI_Model{
 	        
 	    } 
 
-	    public function a_venir(){
+	    public function a_venir($valeur_decrypte){
 
 	    	$result = $this->db->select('*')
 		 						->from($this->table)
-		 						->where('nom_utilisateur',get_cookie('cookieUtilisateur'))		
+		 						->where('nom_utilisateur',$valeur_decrypte)		
 		 						->get()
 		 						->result();
 		 	 return $result;

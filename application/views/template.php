@@ -64,7 +64,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="<?php echo base_url() ?>Utilisateur/" class="navbar-brand">
 						<small class="bolder">
 							ShareUrTalent
 						</small>
@@ -114,7 +114,7 @@
 									<ul class="dropdown-menu dropdown-navbar">
 
 								<li class="dropdown-footer">
-									<a href="inbox.html">
+									<a href="#">
 										Voir tous les talents que je recois
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
@@ -127,14 +127,14 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="<?php echo base_url() ?>ace-master/assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>Bienvenu</small>
-									<?php echo  get_cookie('cookieUtilisateur'); ?>
+									<small>Bienvenue</small>
+									<?php echo $this->encryption->decrypt(get_cookie('cookieUtilisateur')); ?>
 								</span>
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li class="center">
-									<a href="<?php echo base_url() ?>utilisateur/modifier">
+									<a href="<?php echo base_url() ?>Utilisateur/modifier">
 									<i class="ace-icon fa fa-cog"></i>
 
 										Modifier
@@ -142,7 +142,7 @@
 								</li>
 
 								<li class="center">
-									<a href="<?php echo base_url() ?>utilisateur/profil">
+									<a href="<?php echo base_url() ?>Utilisateur/profil">
 										<i class="ace-icon fa fa-user"></i>
 										Mon profile
 									</a>
@@ -151,7 +151,7 @@
 								<li class="divider"></li>
 
 								<li class="center">
-									<a href="<?php echo base_url() ?>utilisateur/deconnexion">
+									<a href="<?php echo base_url() ?>Utilisateur/deconnexion">
 									<i class="ace-icon fa fa-power-off"></i>
 
 										Deconnexion
@@ -206,7 +206,7 @@
 
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="<?php echo base_url() ?>utilisateur/index">
+						<a href="<?php echo base_url() ?>Utilisateur/index">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Accueil </span>
 						</a>
@@ -215,7 +215,7 @@
 					</li>
 
 					<li class="">
-						<a href="" class="dropdown-toggle">
+						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-calendar "></i>
 							<span class="menu-text">
 								A venir
@@ -228,7 +228,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="<?php echo base_url() ?>partage/a_venir" >
+								<a href="<?php echo base_url() ?>Partage/a_venir" >
 									<i class="menu-icon fa fa-caret-right"></i>
 
 									Tout
@@ -238,7 +238,7 @@
 							</li>
 
 							<li class="">
-								<a href="typography.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									partages à offrir
 								</a>
@@ -247,7 +247,7 @@
 							</li>
 
 							<li class="">
-								<a href="elements.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									partages à recevoir
 								</a>
@@ -260,7 +260,7 @@
 					</li>
 
 					<li class="">
-						<a href="<?php echo base_url() ?>partage/creation_partage">
+						<a href="<?php echo base_url() ?>Partage/creation_partage">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
 							<span class="menu-text"> Créer un partage </span>
 						</a>
@@ -271,7 +271,7 @@
 					</li>
 
 					<li class="">
-						<a href="<?php echo base_url() ?>partage/assister_partage">
+						<a href="<?php echo base_url() ?>Partage/assister_partage">
 							<i class="menu-icon fa fa-globe"></i>
 							<span class="menu-text"> Assister à un partage </span>
 						</a>
@@ -292,7 +292,7 @@
 						<ul class="submenu">
 
 							<li class="">
-								<a href="<?php echo base_url() ?>partage/historique">
+								<a href="<?php echo base_url() ?>Partage/historique">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Tout
 								</a>
@@ -301,7 +301,7 @@
 							</li>
 
 							<li class="">
-								<a href="form-elements.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Partages offerts
 								</a>
@@ -310,7 +310,7 @@
 							</li>
 
 							<li class="">
-								<a href="form-elements-2.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Partages reçus
 								</a>
@@ -341,7 +341,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="<?php echo base_url() ?>note/a_noter">
+								<a href="<?php echo base_url() ?>Note/a_noter">
 									<i class="menu-icon fa fa-caret-right"></i>
 									A noter
 								</a>
@@ -350,7 +350,7 @@
 							</li>
 
 							<li class="">
-								<a href="<?php echo base_url() ?>note/mes_notes">
+								<a href="<?php echo base_url() ?>Note/mes_notes">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Mes notes
 								</a>
@@ -440,7 +440,7 @@
 		<script src="<?php echo base_url() ?>ace-master/assets/js/ace.min.js"></script>
 		<!-- inline scripts related to this page -->
 			<script type="text/javascript">
-			
+			jQuery(function($) {
 			
 				$('#spinner2').ace_spinner({value:0,min:1,max:10,step:1, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
 				

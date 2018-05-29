@@ -4,7 +4,7 @@
 														<ul class="breadcrumb">
 															<li>
 																<i class="menu-icon fa fa-cog"></i>
-																<a href="<?php echo base_url() ?>utilisateur/modifier">Modifier</a>
+																<a href="<?php echo base_url() ?>Utilisateur/modifier">Modifier</a>
 															</li>
 														</ul><!-- /.breadcrumb -->
 

@@ -1,6 +1,6 @@
 <?php
 
-class note extends CI_Controller {
+class Note extends CI_Controller {
 
 
         public function mes_notes(){ 
@@ -16,7 +16,7 @@ class note extends CI_Controller {
 
              }else{
 
-                redirect('utilisateur/index');
+                redirect('Utilisateur/index');
                 
             } 
             
@@ -34,7 +34,7 @@ class note extends CI_Controller {
 
              }else{
 
-                redirect('utilisateur/index');
+                redirect('Utilisateur/index');
                 
             } 
 

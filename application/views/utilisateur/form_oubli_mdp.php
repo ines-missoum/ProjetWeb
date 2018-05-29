@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												Entez votre adresse mail pour recevoir les instructions
 											</p>
 
-											<?php echo form_open('utilisateur/oubli_mdp'); ?>
+											<?php echo form_open('Utilisateur/oubli_mdp'); ?>
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</div><!-- /.widget-main -->
 
 										<div class="toolbar center">
-											<a href="<?php echo base_url() ?>utilisateur/page_connexion"  class="back-to-login-link">
+											<a href="<?php echo base_url() ?>Utilisateur/page_connexion"  class="back-to-login-link">
 												Connexion
 												
 											</a>

@@ -176,25 +176,28 @@
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
+						
 
 						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
+							<a href="<?php echo base_url() ?>Utilisateur/modifier">
+							<i class="ace-icon fa fa-cog white"></i>
+						</a>
 						</button>
 
 						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
+							<a href="<?php echo base_url() ?>Utilisateur/profil">
+							<i class="ace-icon fa fa-user white"></i>
+						</a>
 						</button>
 
 						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
+							<a href="<?php echo base_url() ?>Utilisateur/deconnexion">
+							<i class="ace-icon fa fa-power-off white"></i>
+						</a>
 						</button>
 					</div>
 
 					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
 
 						<span class="btn btn-info"></span>
 

@@ -11,6 +11,17 @@ class Utilisateur_model extends CI_Model{
 	    } 
 
 
+	     public function get_utilisateur($valeur_decrypte){
+
+	    	$result = $this->db->select('*')
+		 						->from($this->table)
+		 						->where('nom_utilisateur',$valeur_decrypte)		
+		 						->get()
+		 						->result();
+		 	 return $result;
+	    }
+
+
 	     public function verif_connexion($data){ 
 	    
 

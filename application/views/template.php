@@ -125,7 +125,7 @@
 
 						<li class="green dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="<?php echo base_url() ?>ace-master/assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="<?php echo base_url() ?>ace-master/assets/images/avatars/avatar2.png" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Bienvenue</small>
 									<?php echo $this->encryption->decrypt(get_cookie('cookieUtilisateur')); ?>
@@ -144,7 +144,7 @@
 								<li class="center">
 									<a href="<?php echo base_url() ?>Utilisateur/profil">
 										<i class="ace-icon fa fa-user"></i>
-										Mon profile
+										Mon profil
 									</a>
 								</li>
 
@@ -383,7 +383,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120 bolder">
-						Share<span class="pink">Ur</span>Talent 
+						Share<span class="pink">Ur</span>Talent &copy; 2018
 						</span>
 
 					</div>

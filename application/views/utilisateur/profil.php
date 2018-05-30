@@ -31,12 +31,14 @@
 
 												<div class="space-4"></div>
 
+												<?php foreach ($utilisateur as $item ){?>
+
 												<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
 													<div class="inline position-relative">
 														<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
 															
 														
-															<span class="white">Nom utilisateur</span>
+															<span class="white"><?php echo $item->nom_utilisateur ?></span>
 														</a>
 
 														
@@ -53,7 +55,7 @@
 												<span class="btn btn-app btn-sm btn-yellow no-hover">
 													<!--<i class="ace-icon fa fa-star">-->
 													<span class="ace-icon fa fa-star"> </span>
-													<span class="line-height-1 smaller-90"> 15 </span>
+													<span class="line-height-1 smaller-90"> <?php echo $item->nb_points ?></span>
 												</span>
 
 											</div>
@@ -65,7 +67,7 @@
 													<div class="profile-info-name"> Nom </div>
 
 													<div class="profile-info-value">
-														<span class="editable" >doe</span>
+														<span class="editable" ><?php echo $item->nom ?></span>
 													</div>
 												</div>
 
@@ -73,7 +75,7 @@
 													<div class="profile-info-name"> Prenom </div>
 
 													<div class="profile-info-value">
-														<span class="editable" >alex</span>
+														<span class="editable" ><?php echo $item->prenom ?></span>
 													</div>
 												</div>
 
@@ -82,7 +84,7 @@
 
 													<div class="profile-info-value">
 														<i class="fa fa-map-marker light-orange bigger-110"></i>
-														<span class="editable" >Sprinfield</span>
+														<span class="editable" ><?php echo $item->ville ?></span>
 													</div>
 												</div>
 
@@ -109,8 +111,8 @@
 
 											<div class="center">
 												<button type="button" class="btn btn-sm btn-primary btn-white btn-round">
-													<i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
-													<span class="bigger-110">View more activities</span>
+													<i class="ace-icon fa fa-cog bigger-150 middle orange2"></i>
+													<span class="bigger-110">Modifier</span>
 
 													<i class="icon-on-right ace-icon fa fa-arrow-right"></i>
 												</button>
@@ -118,6 +120,11 @@
 										</div>
 
 									</div>
+
+									<?php 
+													}
+
+															?>
 								
 
 											<div class="row">

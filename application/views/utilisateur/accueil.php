@@ -67,9 +67,10 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<h5></p>Share<span class="pink bolder">Ur</span>Talent est un partage dans les deux sens ! </p></br> <p>Vous avez généreusement partagé vos talents et vous pouvez maintenant assister à des partages gratuitement ! </p></h5>
+													<h5></p>Share<span class="pink bolder">Ur</span>Talent est un partage dans les deux sens ! </p></br></br> <p>Vous avez généreusement partagé vos talents et vous pouvez maintenant assister à des partages gratuitement ! </p></h5>
 													<ul class="list-unstyled spaced2">
 														<li>
+															</br></br>
 															<i class="ace-icon fa fa-check green"></i>
 															Assistez à un partage avec seulement 3 <i class="ace-icon fa fa-star orange"></i>
 														</li>
@@ -113,6 +114,7 @@
 														<li>
 															<i class="ace-icon fa fa-check green"></i>
 															Récapitulatifs des partages auxquels vous devez assister
+														</br></br>
 														</li>
 
 													
@@ -123,6 +125,7 @@
 														<li>
 															<i class="ace-icon fa fa-check green"></i>
 															Accéder à vos historiques de partages
+															</br></br></br>
 														</li>
 													
 													</ul>
@@ -145,7 +148,7 @@
 
 											<div class="widget-body">
 												<div class="widget-main">
-													<h5></p>Share<span class="pink bolder">Ur</span>Talent est soucieux de vous fournir un service de qualité ! Un système de notes a donc été mise en place. </p></br> <p class="red">N'oubliez pas de noter tous les partages auxquels vous assistez ;) </p></h5>
+													<h5></p>Share<span class="pink bolder">Ur</span>Talent est soucieux de vous fournir un service de qualité ! Un système de notes a donc été mise en place. </p></br> <p class="red">N'oubliez pas de noter tous les partages auxquels vous assistez ;) </p></h5></br>
 													<ul class="list-unstyled spaced2">
 														<li>
 															<i class="ace-icon fa fa-check green"></i>
@@ -155,6 +158,7 @@
 														<li>
 															<i class="ace-icon fa fa-check green"></i>
 															Améliorer vos partages en consultant leurs notes et commentaires 
+															</br></br></br>
 														</li>
 
 													</ul>

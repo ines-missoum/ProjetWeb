@@ -47,8 +47,12 @@ class Utilisateur extends CI_Controller {
 
         public function profil(){ 
             if( get_cookie('cookieUtilisateur')!=''){
+
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['utilisateur'] = $this->Utilisateur_model->get_utilisateur($valeur_decrypte);
                 // On stocke notre page dans la variable $page
-                $page = $this->load->view('utilisateur/profil','',true);
+                $page = $this->load->view('utilisateur/profil',$result,true);
 
                 // On affiche notre page avec le template
                 $this->load->view('template', array('page' => $page));
@@ -64,7 +68,8 @@ class Utilisateur extends CI_Controller {
         public function deconnexion(){ 
 
             delete_cookie('cookieUtilisateur');
-            $this->load->view('Utilisateur/deconnexion');
+
+            $this->load->view('utilisateur/deconnexion');
              
         }
 

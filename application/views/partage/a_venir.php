@@ -20,15 +20,66 @@
 												</h1>
 											</div><!-- /.page-header -->
 											<div class="page-content">
-																	
-												<?php 
+												<table id="simple-table" class="table  table-bordered table-hover">					
+												<thead>
+												<tr>
+									
+													<th class="detail-col">Details</th>
+													<th>Intitulé</th>
+													
+													<th><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Date</th>
+													<th><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Heure de début</th>
+													<th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Heure de fin</th>
+
+													<th>Ville</th>
+												
+												</tr>
+											</thead>
+											<tbody>
+											<?php 
+
 															
-																foreach ($partage as $item ){
+															
+																/*foreach ($partage as $item ){
 																	
 																	echo $item->intitule;
-																}
+																	}*/
 
 															?>
+
+																	<?php foreach ($partage as $item ){?>
+															
+
+											
+
+												<tr>
+
+													<td class="center">
+														<div class="action-buttons">
+															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+																<i class="ace-icon fa fa-angle-double-down"></i>
+																<span class="sr-only">Voir le détail</span>
+															</a>
+														</div>
+													</td>
+
+													<td><?php echo $item->intitule ?></td>
+
+													<td><?php echo $item->intitule ?></td>
+
+													<td><?php echo $item->intitule ?></td>
+													
+													<td><?php echo $item->intitule ?></td>
+
+													<td><?php echo $item->ville ?></td>
+
+												</tr>
+												<?php 
+													}
+
+															?>
+											</tbody>
+										</table>
 
 											<div class="row">
 											<div class="col-xs-12">

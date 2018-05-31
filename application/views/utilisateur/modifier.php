@@ -12,7 +12,7 @@
 											
 											<div class="page-header">
 												<h1>
-													Modifier votre profile
+													Modifier votre profil
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
 														Vous pouvez mettre à jour vos informations personnelles

@@ -93,6 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 															<span class="block input-icon input-icon-right">
 															<input type="password" name="password" class="form-control" placeholder="Mot de passe"  required/>
 															<i class="ace-icon fa fa-lock"></i>
+															<h6 style="color:red;" ><?php echo form_error('password');?></h6>
 															</span>
 														
 													</label>
@@ -109,6 +110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 															<span class="block input-icon input-icon-right">
 															<input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo set_value('email') ?>" required />
 															<i class="ace-icon fa fa-envelope"></i>
+															<h6 style="color:red;" ><?php echo form_error('email');?></h6>
 															</span>
 													</label>
 

@@ -80,6 +80,15 @@
 												</div>
 
 												<div class="profile-info-row">
+													<div class="profile-info-name"> @<i class="ace-icon fa fa-envelope"></i> </div>
+
+													<div class="profile-info-value">
+														
+														<span class="editable" ><?php echo $item->email ?></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
 													<div class="profile-info-name"> Ville </div>
 
 													<div class="profile-info-value">
@@ -92,7 +101,7 @@
 													<div class="profile-info-name"> Description </div>
 
 													<div class="profile-info-value">
-														<span class="editable" >voila ma description</span>
+														<span class="editable" ><?php echo $item->a_propos ?></span>
 													</div>
 												</div>
 
@@ -110,12 +119,14 @@
 											<div class="space-6"></div>
 
 											<div class="center">
+												<a href="<?php echo base_url() ?>Utilisateur/modifier">
 												<button type="button" class="btn btn-sm btn-primary btn-white btn-round">
 													<i class="ace-icon fa fa-cog bigger-150 middle orange2"></i>
 													<span class="bigger-110">Modifier</span>
 
 													<i class="icon-on-right ace-icon fa fa-arrow-right"></i>
 												</button>
+											</a>
 											</div>
 										</div>
 

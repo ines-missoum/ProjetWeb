@@ -60,16 +60,17 @@ class Partage extends CI_Controller {
             
         }
 
-        public function a_venir(){ 
+
+        public function a_venir_offrir(){ 
 
             if( get_cookie('cookieUtilisateur')!=''){
 
                 $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
 
-                $result['partage'] = $this->Partage_model->a_venir($valeur_decrypte);
+                $result['partage'] = $this->Partage_model->a_venir_offrir($valeur_decrypte);
 
                 // On stocke notre page dans la variable $page
-                $page = $this->load->view('partage/a_venir',$result,true);
+                $page = $this->load->view('partage/a_venir_offrir',$result,true);
 
                 // On affiche notre page avec le template
                 $this->load->view('template', array('page' => $page));
@@ -82,6 +83,30 @@ class Partage extends CI_Controller {
 
             
         }
+
+        public function historique_offrir(){ 
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['partage'] = $this->Partage_model->historique_offrir($valeur_decrypte);
+
+                // On stocke notre page dans la variable $page
+                $page = $this->load->view('partage/historique_offrir',$result,true);
+
+                // On affiche notre page avec le template
+                $this->load->view('template', array('page' => $page));
+
+            }else{
+
+                redirect('Utilisateur/index');
+                
+            } 
+
+            
+        }
+
 
 
         public function assister_partage(){ 
@@ -103,24 +128,6 @@ class Partage extends CI_Controller {
             
         }
 
-         public function historique(){ 
-
-            if( get_cookie('cookieUtilisateur')!=''){
-
-                // On stocke notre page dans la variable $page
-                $page = $this->load->view('partage/historique','',true);
-
-                // On affiche notre page avec le template
-                $this->load->view('template', array('page' => $page));
-
-            }else{
-
-                redirect('Utilisateur/index');
-                
-            } 
-
-            
-        }
 
 
 }

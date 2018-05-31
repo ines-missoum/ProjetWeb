@@ -131,31 +131,24 @@
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" > Description </label>
+												<label class="col-sm-3 control-label no-padding-right" > Décrivez en quoi consistera le partage: </label>
 
 													<div class="col-sm-9">
-													<textarea name="description"  rows="5" class="col-xs-10 col-sm-5" placeholder="Décrivez en quoi consistera le partage..."  value="<?php echo set_value('description') ?>" required >
+													<textarea   name="description" class="col-xs-10 col-sm-5" rows="5" value="<?php echo set_value('description') ?>" required >
 													</textarea>
 													</div>
 
 											</div>
 
 											<div class="form-group">
-												<label class="col-sm-3 control-label no-padding-right" > A noter </label>
+												<label class="col-sm-3 control-label no-padding-right" > Vous pouvez ajouter un commentaire adressé aux participants:</label>
 
 													<div class="col-sm-9">
-													<textarea name="commentaire"  rows="3" class="col-xs-10 col-sm-5" placeholder="Vous pouvez ajouter un commentaire adressé aux participants que vous pourez modifier par la suite..."  value="<?php echo set_value('description') ?>" >
+													<textarea name="commentaire"  rows="3" class="col-xs-10 col-sm-5" value="<?php echo set_value('description') ?>" >
 													</textarea>
 													</div>
 
 											</div>
-											
-									
-									
-
-
-
-
 
 													<div class="clearfix">
 														<div class="col-sm-9">

@@ -34,6 +34,18 @@ class Utilisateur_model extends CI_Model{
 		 	 return $result;	
     	} 
 
+    	public function modification($data){ 
+	    
+
+		 	$this->db
+		 	->set('nom', $data['nom'])
+		 	->set('prenom', $data['prenom'])
+		 	->set('ville', $data['ville'])
+		 	->set('email', $data['email'])
+		 	->where('nom_utilisateur',$data['nom_utilisateur'])
+		 	->update($this->table);
+    	} 
+
 	    public function insert($data) {
 	        
 

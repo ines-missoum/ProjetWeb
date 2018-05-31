@@ -70,7 +70,7 @@
 													<h5></p>Share<span class="pink bolder">Ur</span>Talent est un partage dans les deux sens ! </p></br></br> <p>Vous avez généreusement partagé vos talents et vous pouvez maintenant assister à des partages gratuitement ! </p></h5>
 													<ul class="list-unstyled spaced2">
 														<li>
-															</br></br>
+															</br>
 															<i class="ace-icon fa fa-check green"></i>
 															Assistez à un partage avec seulement 3 <i class="ace-icon fa fa-star orange"></i>
 														</li>

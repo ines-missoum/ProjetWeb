@@ -40,6 +40,7 @@ class Partage extends CI_Controller {
                              "ville"=> htmlspecialchars($_POST['ville']),
                              "description" => htmlspecialchars($_POST['description']),
                              "commentaire_partage"=> htmlspecialchars($_POST['commentaire']),
+                             "places_dispo"=> htmlspecialchars($_POST['nb_max']),
                              "nom_utilisateur" => $valeur_decrypte,
                              "num_categorie"=> htmlspecialchars($_POST['categorie'])
                             );

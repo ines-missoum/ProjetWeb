@@ -141,13 +141,23 @@ class Utilisateur extends CI_Controller {
 
               if( get_cookie('cookieUtilisateur')==''){
 
-                    $this->form_validation->set_rules('username', 'Username', 'min_length[5]|max_length[12]|is_unique[utilisateur.nom_utilisateur]',
+                    $this->form_validation->set_rules('username', 'Username', 'min_length[5]|max_length[20]|is_unique[utilisateur.nom_utilisateur]',
                     array(
                     'is_unique'     => "Identifiant déjà utilisé"
                             )
                     );
 
-                    $this->form_validation->set_rules('password', 'Password', 'required');
+                    $this->form_validation->set_rules('email', 'Email', 'is_unique[utilisateur.email]',
+                    array(
+                    'is_unique'     => "Un compte est déjà rattaché à cette adresse"
+                            )
+                    );
+
+                    $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]',
+                    array(
+                    'min_length'     => "Au moins 8 caractères"
+                            )
+                    );
 
                     $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]',
                     array(
@@ -172,12 +182,14 @@ class Utilisateur extends CI_Controller {
                              "nom"=> htmlspecialchars($_POST['nom']),
                              "prenom" => htmlspecialchars($_POST['prenom']),
                              "ville"=> htmlspecialchars($_POST['ville']),
-                             "nb_points"=> 3
+                             "nb_points"=> 3,
+                             "email"=> htmlspecialchars($_POST['email']),
+                             "a_propos"=> "Pas de description",
                             );
 
                           
                            $this->Utilisateur_model->insert($data);
-                           $this->load->view('utilisateur/inscriptionOK');
+                           $this->index();
                     }
 
                 }else{

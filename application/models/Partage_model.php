@@ -9,15 +9,35 @@ class Partage_model extends CI_Model{
 	        
 	    } 
 
-	    public function a_venir($valeur_decrypte){
+
+	     public function a_venir_offrir($valeur_decrypte){
+
+	     	$datestring = '%Y %m %d';
 
 	    	$result = $this->db->select('*')
 		 						->from($this->table)
-		 						->where('nom_utilisateur',$valeur_decrypte)		
+		 						->where('nom_utilisateur =',$valeur_decrypte)
+		 						->where('daterdv >=',mdate($datestring))
+		 						->order_by('daterdv')		
 		 						->get()
 		 						->result();
 		 	 return $result;
 	    }
+
+	    public function historique_offrir($valeur_decrypte){
+
+	     	$datestring = '%Y %m %d';
+
+	    	$result = $this->db->select('*')
+		 						->from($this->table)
+		 						->where('nom_utilisateur =',$valeur_decrypte)
+		 						->where('daterdv <=',mdate($datestring))
+		 						->order_by('daterdv')		
+		 						->get()
+		 						->result();
+		 	 return $result;
+	    }
+
 
 	    
 	    public function insert($data) {

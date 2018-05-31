@@ -32,8 +32,11 @@ class Utilisateur extends CI_Controller {
 
              if( get_cookie('cookieUtilisateur')!=''){
 
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['utilisateur'] = $this->Utilisateur_model->get_utilisateur($valeur_decrypte);
                 // On stocke notre page dans la variable $page
-                $page = $this->load->view('utilisateur/modifier','',true);
+                $page = $this->load->view('utilisateur/modifier',$result,true);
 
                 // On affiche notre page avec le template
                 $this->load->view('template', array('page' => $page));
@@ -123,6 +126,8 @@ class Utilisateur extends CI_Controller {
             
         }
 
+
+
         public function oubli_mdp(){ 
 
             if( get_cookie('cookieUtilisateur')==''){
@@ -136,26 +141,117 @@ class Utilisateur extends CI_Controller {
             }
 
         }
+
+        public function valid_modif(){
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+
+                     $this->form_validation->set_rules('nom', 'Nom', 'max_length[30]',
+                    array(
+                    'max_length'     => "Pas plus de 30 caractères"
+
+                            )
+                    );
+
+                     $this->form_validation->set_rules('prenom', 'Prenom', 'max_length[30]',
+                    array(
+                    'max_length'     => "Pas plus de 30 caractères"
+
+                            )
+                    );
+
+                    $this->form_validation->set_rules('email', 'Email', 'max_length[50]',
+                    array(
+                    'max_length'     => "Pas plus de 50 caractères"
+                            )
+                    );
+
+
+                    $this->form_validation->set_rules('ville', 'Ville', 'max_length[50]',
+                    array(
+                    'max_length'     => "Pas plus de 50 caractères"
+                            )
+                    );
+
+
+                    if ($this->form_validation->run() == FALSE){
+                    
+                            $this->modifier();
+
+                    }else{
+
+                           $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                           $data=array(
+                            "nom_utilisateur"=>$valeur_decrypte,
+                             "nom"=> htmlspecialchars($_POST['nom']),
+                             "prenom" => htmlspecialchars($_POST['prenom']),
+                             "ville"=> htmlspecialchars($_POST['ville']),
+                             "email"=> htmlspecialchars($_POST['email']),
+                             "a_propos"=> htmlspecialchars($_POST['a_propos'])
+                             
+                            );
+
+                          
+                           $this->Utilisateur_model->modification($data);
+                           $this->profil();
+                    }
+
+                }else{
+
+                $this->index();
+                
+            }
+
+        }
+        
         
         public function inscription(){       
 
               if( get_cookie('cookieUtilisateur')==''){
 
-                    $this->form_validation->set_rules('username', 'Username', 'min_length[5]|max_length[20]|is_unique[utilisateur.nom_utilisateur]',
+                    $this->form_validation->set_rules('username', 'Username', 'min_length[5]|max_length[30]|is_unique[utilisateur.nom_utilisateur]',
                     array(
-                    'is_unique'     => "Identifiant déjà utilisé"
+                    'is_unique'     => "Identifiant déjà utilisé",
+                    'min_length'     => "Au moins 5 caractères",
+                    'max_length'     => "Pas plus de 30 caractères"
+
                             )
                     );
 
-                    $this->form_validation->set_rules('email', 'Email', 'is_unique[utilisateur.email]',
+                     $this->form_validation->set_rules('nom', 'Nom', 'max_length[30]',
                     array(
-                    'is_unique'     => "Un compte est déjà rattaché à cette adresse"
+                    'max_length'     => "Pas plus de 30 caractères"
+
                             )
                     );
 
-                    $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]',
+                     $this->form_validation->set_rules('prenom', 'Prenom', 'max_length[30]',
                     array(
-                    'min_length'     => "Au moins 8 caractères"
+                    'max_length'     => "Pas plus de 30 caractères"
+
+                            )
+                    );
+
+                    $this->form_validation->set_rules('email', 'Email', 'max_length[50]|is_unique[utilisateur.email]',
+                    array(
+                    'is_unique'     => "Un compte est déjà rattaché à cette adresse",
+                    'max_length'     => "Pas plus de 50 caractères"
+                            )
+                    );
+
+
+                    $this->form_validation->set_rules('ville', 'Ville', 'max_length[50]',
+                    array(
+                    'max_length'     => "Pas plus de 50 caractères"
+                            )
+                    );
+
+                    $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[50]',
+                    array(
+                    'min_length'     => "Au moins 8 caractères",
+                    'max_length'     => "Pas plus de 50 caractères"
                             )
                     );
 

@@ -47,7 +47,7 @@ class Partage extends CI_Controller {
 
                           
                            $this->Partage_model->insert($data);
-                           $this->a_venir();
+                           $this->a_venir_offrir();
                     }
 
 

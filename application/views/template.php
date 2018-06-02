@@ -242,7 +242,7 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="<?php echo base_url() ?>Participer/a_venir_recevoir"">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Partages à recevoir
 								</a>
@@ -297,7 +297,7 @@
 							</li>
 
 							<li class="">
-								<a href="#">
+								<a href="<?php echo base_url() ?>Participer/historique_recevoir">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Partages reçus
 								</a>

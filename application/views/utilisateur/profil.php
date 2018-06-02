@@ -97,16 +97,6 @@
 													</div>
 												</div>
 
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Description </div>
-
-													<div class="profile-info-value">
-														<span class="editable" ><?php echo $item->a_propos ?></span>
-													</div>
-												</div>
-
-												
-
 												
 											</div>
 

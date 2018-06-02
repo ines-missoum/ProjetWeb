@@ -106,14 +106,6 @@
 													</div>
 												</div>
 
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Description </div>
-
-													<div class="profile-info-value">
-														<span class="editable" ><input type="text"  name="a_propos" class="col-xs-10 col-sm-5" value="<?php echo $item->a_propos ?>" /></span>
-													</div>
-												</div>
-
 												
 
 												

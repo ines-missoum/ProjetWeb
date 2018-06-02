@@ -87,6 +87,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 															<input type="password" name="password" class="form-control" placeholder="Mot de passe" value="" required/>
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
+														<?php if(!$ok): ?>
+														<h6 style="color:red;">identifiant et/ou mot de passe incorrect</h6>
+													<?php endif ?>
 													</label>
 
 													<div class="space"></div>

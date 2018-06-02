@@ -1,6 +1,11 @@
 <?php
 
 class Partage extends CI_Controller { 
+
+        public function index(){
+            
+            $this->creation_partage();
+        }
                 
 
         public function creation_partage(){
@@ -97,6 +102,96 @@ class Partage extends CI_Controller {
 
                 // On stocke notre page dans la variable $page
                 $page = $this->load->view('partage/detail_partage',$result,true);
+
+                // On affiche notre page avec le template
+                $this->load->view('template', array('page' => $page));
+
+            }else{
+
+                redirect('Utilisateur/index');
+                
+            } 
+
+            
+        }
+
+        public function mon_partage($id_partage){ 
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+
+                $result['partage'] = $this->Partage_model->get_partage($id_partage);
+
+                // On stocke notre page dans la variable $page
+                $page = $this->load->view('partage/mon_partage',$result,true);
+
+                // On affiche notre page avec le template
+                $this->load->view('template', array('page' => $page));
+
+            }else{
+
+                redirect('Utilisateur/index');
+                
+            } 
+
+            
+        }
+
+        public function detail_partage_note($id_partage){ 
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+
+                $result['partage'] = $this->Partage_model->get_partage($id_partage);
+
+                // On stocke notre page dans la variable $page
+                $page = $this->load->view('partage/detail_partage_note',$result,true);
+
+                // On affiche notre page avec le template
+                $this->load->view('template', array('page' => $page));
+
+            }else{
+
+                redirect('Utilisateur/index');
+                
+            } 
+
+            
+        }
+
+        public function detail_partage_a_recevoir($id_partage){ 
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['partage'] = $this->Partage_model->detail_partage($id_partage,$valeur_decrypte);
+
+                // On stocke notre page dans la variable $page
+                $page = $this->load->view('partage/partage_a_recevoir',$result,true);
+
+                // On affiche notre page avec le template
+                $this->load->view('template', array('page' => $page));
+
+            }else{
+
+                redirect('Utilisateur/index');
+                
+            } 
+
+            
+        }
+
+        public function detail_partage_recu($id_partage){ 
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['partage'] = $this->Partage_model->detail_partage($id_partage,$valeur_decrypte);
+
+                // On stocke notre page dans la variable $page
+                $page = $this->load->view('partage/partage_recu',$result,true);
 
                 // On affiche notre page avec le template
                 $this->load->view('template', array('page' => $page));

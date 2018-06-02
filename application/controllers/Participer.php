@@ -2,6 +2,10 @@
 
 class Participer extends CI_Controller { 
 
+    public function index(){
+        $this->a_venir_recevoir();
+    }
+
 	public function creation_participation($id_partage){ 
 
 
@@ -50,6 +54,7 @@ class Participer extends CI_Controller {
 
             
         }
+        
  public function historique_recevoir(){ 
 
             if( get_cookie('cookieUtilisateur')!=''){

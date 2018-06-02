@@ -67,8 +67,19 @@ class Partage_model extends CI_Model{
 		 						->join('utilisateur', 'utilisateur.nom_utilisateur=partage.nom_utilisateur')
 		 						->join('categorie', 'categorie.num_categorie=partage.num_categorie')
 		 						->where('partage.num_partage =',$id_partage)
-		 						->where('partage.nom_utilisateur !=',$nom_utilisateur)
-		 						->order_by('daterdv')		
+		 						->where('partage.nom_utilisateur !=',$nom_utilisateur)	
+		 						->get()
+		 						->result();
+		 	 return $result;
+	    }
+
+	    public function get_partage($id_partage){
+
+
+	    	$result = $this->db->select('*')
+		 						->from($this->table)
+		 						->join('categorie', 'categorie.num_categorie=partage.num_categorie')
+		 						->where('partage.num_partage =',$id_partage)	
 		 						->get()
 		 						->result();
 		 	 return $result;

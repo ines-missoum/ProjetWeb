@@ -28,6 +28,47 @@ class Utilisateur extends CI_Controller {
             
         }
 
+         public function verif_points($id_partage){ 
+
+            
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+                
+                $points= $this->Utilisateur_model->get_points($valeur_decrypte);
+
+                
+                    if ($points[0]->nb_points<3){
+                        // On vérifie que l'utilisateur a assez de points pour participer à un partage
+                    
+
+                    // On stocke notre page dans la variable $page
+                        $page = $this->load->view('utilisateur/pas_assez_points','',true);
+
+                        $data = array(
+                            'page' => $page
+                        );
+                        // On affiche notre page avec le template
+                        $this->load->view('template', $data);
+
+                    }else{
+
+
+                       $ref = site_url("Participer/creation_participation/$id_partage"); 
+
+                        redirect($ref);
+                    }
+
+            }else{
+
+                $this->page_connexion();
+                
+            } 
+
+            
+        }
+
         public function modifier(){ 
 
              if( get_cookie('cookieUtilisateur')!=''){
@@ -80,7 +121,9 @@ class Utilisateur extends CI_Controller {
 
             if( get_cookie('cookieUtilisateur')==''){
 
-              $this->load->view('utilisateur/form_connexion');  
+            $ok=true;
+
+              $this->load->view('utilisateur/form_connexion',array('ok'=>$ok));  
 
             }else{
 
@@ -91,6 +134,7 @@ class Utilisateur extends CI_Controller {
         }
         public function verif_connexion(){ 
 
+            
            if( get_cookie('cookieUtilisateur')==''){
 
                 define("PREFIXE", "mysteremystere");
@@ -105,7 +149,10 @@ class Utilisateur extends CI_Controller {
                 $result = $this->Utilisateur_model->verif_connexion($data);
 
                 if(empty($result)){
-                    $this->load->view('utilisateur/form_connexion');
+                    
+                    $ok=false;
+                    $this->load->view('utilisateur/form_connexion',array('ok'=>$ok));
+
                 }else{
 
                     $valeur_crypte= $this->encryption->encrypt($data['nom_utilisateur']);

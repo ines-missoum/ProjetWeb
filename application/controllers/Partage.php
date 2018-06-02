@@ -85,6 +85,31 @@ class Partage extends CI_Controller {
             
         }
 
+       
+
+        public function detail_partage($id_partage){ 
+
+            if( get_cookie('cookieUtilisateur')!=''){
+
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['partage'] = $this->Partage_model->detail_partage($id_partage,$valeur_decrypte);
+
+                // On stocke notre page dans la variable $page
+                $page = $this->load->view('partage/detail_partage',$result,true);
+
+                // On affiche notre page avec le template
+                $this->load->view('template', array('page' => $page));
+
+            }else{
+
+                redirect('Utilisateur/index');
+                
+            } 
+
+            
+        }
+
         public function historique_offrir(){ 
 
             if( get_cookie('cookieUtilisateur')!=''){
@@ -108,14 +133,18 @@ class Partage extends CI_Controller {
             
         }
 
+       
 
-
-        public function assister_partage(){ 
+         public function assister_partage(){ 
 
             if( get_cookie('cookieUtilisateur')!=''){
 
+                $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
+
+                $result['partage'] = $this->Partage_model->assister_partage($valeur_decrypte);
+
                 // On stocke notre page dans la variable $page
-                $page = $this->load->view('partage/assister_partage','',true);
+                $page = $this->load->view('partage/assister_partage',$result,true);
 
                 // On affiche notre page avec le template
                 $this->load->view('template', array('page' => $page));
@@ -128,7 +157,6 @@ class Partage extends CI_Controller {
 
             
         }
-
 
 
 }

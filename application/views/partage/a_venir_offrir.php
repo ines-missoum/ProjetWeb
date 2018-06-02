@@ -38,16 +38,16 @@
 											</thead>
 											<tbody>
 
-													<?php foreach ($partage as $item ){?>
+													<?php foreach ($partage as $item ){
 															
 
-											
+											$ref = site_url("Partage/detail_partage/$item->num_partage"); ?>
 
 												<tr>
 
 													<td class="center">
 														<div class="action-buttons">
-															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+															<a href=<?php echo $ref ?> class="blue bigger-140 show-details-btn" title="Voir le détail">
 																<i class="ace-icon fa fa-angle-double-down"></i>
 																<span class="sr-only">Voir le détail</span>
 															</a>

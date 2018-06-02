@@ -4,7 +4,7 @@
 														<ul class="breadcrumb">
 															<li>
 																<i class="menu-icon fa fa-pencil-square-o"></i>
-																<a href="#">Créer un partage</a>
+																Créer un partage
 															</li>
 														</ul><!-- /.breadcrumb -->
 
@@ -78,7 +78,7 @@
 														
 															<div class=" col-sm-4">
 																<div class="input-group">
-																	<input class="form-control date-picker" name="jour" id="id-date-picker-1" type="date" data-date-format="dd-mm-yyyy"  required />
+																	<input class="form-control date-picker" name="jour" min="<?php echo mdate('%Y-%m-%d') ?>" id="id-date-picker-1" type="date" data-date-format="dd-mm-yyyy"  required />
 																	<span class="input-group-addon">
 																		<i class="fa fa-calendar bigger-110"></i>
 																	</span>
@@ -91,7 +91,7 @@
 													<label class="col-sm-3 control-label no-padding-right" > Heure de début du partage </label>
 													<div class="col-sm-4">
 														<div class="input-group bootstrap-timepicker">
-															<input name="h_debut" type="time" class="form-control timepicker" required />
+															<input  type="time" name="h_debut" class="form-control" value="<?php echo set_value('h_debut') ?>" required />
 															<span class="input-group-addon" required>
 																<i class="fa fa-clock-o bigger-110"></i>
 															</span>
@@ -106,7 +106,7 @@
 													<label class="col-sm-3 control-label no-padding-right" > Heure de fin du partage </label>
 													<div class="col-sm-4">
 														<div class="input-group bootstrap-timepicker">
-															<input name="h_fin"  type="time" class="form-control timepicker" required />
+															<input type="time" name="h_fin"   class="form-control" value="<?php echo set_value('h_fin') ?>" required />
 															<span class="input-group-addon">
 																<i class="fa fa-clock-o bigger-110"></i>
 															</span>

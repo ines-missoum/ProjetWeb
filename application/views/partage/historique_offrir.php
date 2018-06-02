@@ -13,7 +13,7 @@
 											
 											<div class="page-header">
 												<h1>
-													Votre programme
+													Souvenirs...
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
 														Voici l'historique des partages que vous avez offerts. Vous pouvez consulter les notes et commentaires correspondants.
@@ -47,7 +47,7 @@
 
 													<td class="center">
 														<div class="action-buttons">
-															<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+															<a href="#" class="blue bigger-140 show-details-btn" title="Voir le détail">
 																<i class="ace-icon fa fa-angle-double-down"></i>
 																<span class="sr-only">Voir le détail</span>
 															</a>

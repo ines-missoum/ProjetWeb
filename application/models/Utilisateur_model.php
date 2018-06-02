@@ -11,6 +11,16 @@ class Utilisateur_model extends CI_Model{
 	    } 
 
 
+	     public function get_points($valeur_decrypte){
+
+	    	$result = $this->db->select('nb_points')
+		 						->from($this->table)
+		 						->where('nom_utilisateur',$valeur_decrypte)		
+		 						->get()
+		 						->result();
+		 	 return $result;
+	    }
+
 	     public function get_utilisateur($valeur_decrypte){
 
 	    	$result = $this->db->select('*')

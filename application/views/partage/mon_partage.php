@@ -3,9 +3,11 @@
 													<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 														<ul class="breadcrumb">
 															<li>
-																<i class="menu-icon fa fa-globe"></i>
-																Assister à un partage
+																<i class="menu-icon fa fa-calendar"></i>
+																A venir
 															</li>
+
+															<li>Partages à offrir</li>
 
 															<?php foreach ($partage as $item ){?>
 
@@ -19,7 +21,7 @@
 													Détails 
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
-														Avant de vous décider, voici toutes les informations du partage sélectionné.
+														Voici toutes les informations de votre futur partage sélectionné.
 													</small>
 												</h1>
 											</div><!-- /.page-header -->
@@ -33,72 +35,7 @@
 										
 										</div>
 
-										<div class="col-xs-12 col-sm-6">
-
-											<div class="center">
-
-												<span class="btn btn-app btn-sm btn-danger no-hover">
-													<!--<i class="ace-icon fa fa-star">-->
-													<span class="ace-icon fa fa-users"> </span>
-													<span class="line-height-1 smaller-90"> encore</br><?php echo $item->places_dispo ?> places</span>
-												</span>
-
-												<span class="btn btn-app btn-sm btn-grey no-hover">
-													<!--<i class="ace-icon fa fa-star">-->
-													<span class="ace-icon fa fa-calendar"> </span>
-													<span class="line-height-1 smaller-90"> </br><?php echo $item->daterdv ?></span>
-												</span>
-
-											</div>
-
-											<div class="space-12"></div>
-											<div class="space-12"></div>
-											
-											<h5 style="color:cornflowerblue; " >Informations sur le créateur du partage : </h5>
-										    
-											<div class="profile-user-info profile-user-info-striped">
-
-												<div class="profile-info-row">
-
-													<div class="profile-info-name"> Pseudo</div>
-
-													<div class="profile-info-value">
-														<span class="editable" ><?php echo $item->nom_utilisateur ?></span>
-													</div>
-												</div>
-
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Prenom </div>
-
-													<div class="profile-info-value">
-														<span class="editable" ><?php echo $item->prenom ?></span>
-													</div>
-												</div>
-
-												<div class="profile-info-row">
-													<div class="profile-info-name"> @<i class="ace-icon fa fa-envelope"></i> </div>
-
-													<div class="profile-info-value">
-														
-														<span class="editable" ><?php echo $item->email ?></span>
-													</div>
-												</div>
-
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Ville </div>
-
-													<div class="profile-info-value">
-														<i class="fa fa-map-marker light-orange bigger-110"></i>
-														<span class="editable" ><?php echo $item->ville ?></span>
-													</div>
-												</div>
-
-												
-											</div>
-
-											<div class="space-20"></div>
-
-											</div>
+										
 
 											<div class="space-6"></div>
 
@@ -106,13 +43,13 @@
 
 										<div>
 
+										<div class="col-xs-12 col-sm-6">
+
 											<div class="width-45 label label-info label-xlg arrowed-in arrowed-in-right">
 													<div class="inline position-relative">
 															<span class="white"><?php echo $item->intitule ?></span>
 														</div>
 													</div>
-
-										<div class="col-xs-12 col-sm-6">
 
 											<div class="space-12"></div>
 
@@ -191,11 +128,31 @@
 										</div>
 
 								
-											<div class="center">
-												<?php $ref = site_url("Utilisateur/verif_points/$item->num_partage"); ?>
+											<div class="col-xs-12 col-sm-6">
 
-												
-												
+											<div class="center">
+												<div class="space-30"></div>
+												<div class="space-30"></div>
+												<span class="btn btn-app btn-sm btn-danger no-hover">
+													<!--<i class="ace-icon fa fa-star">-->
+													<span class="ace-icon fa fa-users"> </span>
+													<span class="line-height-1 smaller-90"> encore</br><?php echo $item->places_dispo ?> places</span>
+												</span>
+
+												<span class="btn btn-app btn-sm btn-grey no-hover">
+													<!--<i class="ace-icon fa fa-star">-->
+													<span class="ace-icon fa fa-calendar"> </span>
+													<span class="line-height-1 smaller-90"> </br><?php echo $item->daterdv ?></span>
+												</span>
+
+											</div>
+
+											<div class="space-12"></div>
+											<div class="space-12"></div>
+											
+
+											<div class="space-20"></div>
+
 											</div>
 
 									<?php 
@@ -210,7 +167,7 @@
 											<div class="row">
 											<div class="col-xs-12">
 
-												<a href="<?php echo base_url() ?>Partage/assister_partage">
+													<a href="<?php echo base_url() ?>Partage/a_venir_offrir">
 												
 															<button type="" class="btn btn-sm btn-primary btn-white btn-round">
 																<i class="icon-on-left ace-icon fa fa-arrow-left"></i>
@@ -218,18 +175,6 @@
 															</button>
 
 													</a>
-
-											<a href=<?php echo $ref ?>
-											   
-												<button type="button" class="btn btn-sm btn-primary btn-round">
-													<i class="ace-icon fa fa-check"></i>
-													<span class="bigger-110">Participer</span>
-
-												</button>
-											</a>
-
-
-
 
 
 											</div><!-- /.col -->

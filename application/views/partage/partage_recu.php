@@ -3,9 +3,11 @@
 													<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 														<ul class="breadcrumb">
 															<li>
-																<i class="menu-icon fa fa-globe"></i>
-																Assister à un partage
+																<i class="menu-icon fa fa-list"></i>
+																Historique
 															</li>
+
+															<li>Partages reçus</li>
 
 															<?php foreach ($partage as $item ){?>
 
@@ -19,7 +21,7 @@
 													Détails 
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
-														Avant de vous décider, voici toutes les informations du partage sélectionné.
+														Voici toutes les informations de votre ancien partage sélectionné.
 													</small>
 												</h1>
 											</div><!-- /.page-header -->
@@ -36,12 +38,6 @@
 										<div class="col-xs-12 col-sm-6">
 
 											<div class="center">
-
-												<span class="btn btn-app btn-sm btn-danger no-hover">
-													<!--<i class="ace-icon fa fa-star">-->
-													<span class="ace-icon fa fa-users"> </span>
-													<span class="line-height-1 smaller-90"> encore</br><?php echo $item->places_dispo ?> places</span>
-												</span>
 
 												<span class="btn btn-app btn-sm btn-grey no-hover">
 													<!--<i class="ace-icon fa fa-star">-->
@@ -189,28 +185,16 @@
 											<div class="space-6"></div>
 
 										</div>
-
-								
 											<div class="center">
-												<?php $ref = site_url("Utilisateur/verif_points/$item->num_partage"); ?>
-
-												
 												
 											</div>
 
-									<?php 
-													}
+									<?php }?>
 
-													?>		
-
-
-											
-
-												
 											<div class="row">
-											<div class="col-xs-12">
+											<div class="col-xs-12">	
 
-												<a href="<?php echo base_url() ?>Partage/assister_partage">
+												<a href="<?php echo base_url() ?>Participer/a_venir_recevoir">
 												
 															<button type="" class="btn btn-sm btn-primary btn-white btn-round">
 																<i class="icon-on-left ace-icon fa fa-arrow-left"></i>
@@ -218,19 +202,6 @@
 															</button>
 
 													</a>
-
-											<a href=<?php echo $ref ?>
-											   
-												<button type="button" class="btn btn-sm btn-primary btn-round">
-													<i class="ace-icon fa fa-check"></i>
-													<span class="bigger-110">Participer</span>
-
-												</button>
-											</a>
-
-
-
-
 
 											</div><!-- /.col -->
 						</div><!-- /.row -->

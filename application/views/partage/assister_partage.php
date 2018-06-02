@@ -21,6 +21,11 @@
 												</h1>
 											</div><!-- /.page-header -->
 											<div class="page-content">
+
+												<?php if(empty($partage)){ ?>
+													<div class="center">
+													<h3 style="color:cornflowerblue; ">Nous n'avons malheureusement plus de places disponibles pour nos partages. </br>De nouveaux partages arrivent tous les jours ! N'hésitez pas à faire une nouvelle recherche très bientôt ! </h3></div>
+												<?php }else{ ?>
 													
 													<table id="simple-table" class="table  table-bordered table-hover">					
 												<thead>
@@ -72,7 +77,7 @@
 
 												</tr>
 												<?php 
-													}
+													}}
 
 															?>
 											</tbody>

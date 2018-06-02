@@ -21,6 +21,21 @@
 												</h1>
 											</div><!-- /.page-header -->
 											<div class="page-content">
+
+												<?php if(empty($partage)){ ?>
+													<div class="center">
+													<h3 style="color:cornflowerblue; ">Vous n'avez rien de programmé. </h3>
+
+													<a href="<?php echo base_url() ?>Partage/creation_partage"
+											   
+												<button type="button" class="btn btn-sm btn-primary btn-white btn-round">
+													<i class="menu-icon fa fa-pencil-square-o"></i>
+													<span class="bigger-110">Créer un partage</span>
+
+													<i class="icon-on-right ace-icon fa fa-arrow-right"></i>
+												</button>
+											</a>	</div>
+													<?php }else{ ?>
 												<table id="simple-table" class="table  table-bordered table-hover">					
 												<thead>
 												<tr>
@@ -32,16 +47,18 @@
 													<th><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Heure de début</th>
 													<th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Heure de fin</th>
 
-													<th>Ville</th>
+													<th >Ville</th>
 												
 												</tr>
 											</thead>
 											<tbody>
 
+
+
 													<?php foreach ($partage as $item ){
 															
-
-											$ref = site_url("Partage/detail_partage/$item->num_partage"); ?>
+														$ref = site_url("Partage/mon_partage/$item->num_partage"); ?>
+											
 
 												<tr>
 
@@ -66,7 +83,7 @@
 
 												</tr>
 												<?php 
-													}
+													}}
 
 															?>
 											</tbody>
@@ -74,6 +91,8 @@
 
 											<div class="row">
 											<div class="col-xs-12">
+
+												
 
 											
 

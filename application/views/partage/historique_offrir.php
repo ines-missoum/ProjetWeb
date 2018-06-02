@@ -21,6 +21,12 @@
 												</h1>
 											</div><!-- /.page-header -->
 											<div class="page-content">
+												
+												<?php if(empty($partage)){ ?>
+													<div class="center">
+													<h3 style="color:cornflowerblue; ">Vous n'avez pas d'historique, un peu de patience ;) . </h3></div>
+												<?php }else{ ?>
+
 												<table id="simple-table" class="table  table-bordered table-hover">					
 												<thead>
 												<tr>
@@ -38,7 +44,9 @@
 											</thead>
 											<tbody>
 
-													<?php foreach ($partage as $item ){?>
+													<?php foreach ($partage as $item ){
+
+													$ref = site_url("Note/detail_notes_partage/$item->num_partage");?>
 															
 
 											
@@ -47,7 +55,7 @@
 
 													<td class="center">
 														<div class="action-buttons">
-															<a href="#" class="blue bigger-140 show-details-btn" title="Voir le détail">
+															<a href=<?php echo $ref ?> class="blue bigger-140 show-details-btn" title="Voir le détail">
 																<i class="ace-icon fa fa-angle-double-down"></i>
 																<span class="sr-only">Voir le détail</span>
 															</a>
@@ -66,7 +74,7 @@
 
 												</tr>
 												<?php 
-													}
+													}}
 
 															?>
 											</tbody>

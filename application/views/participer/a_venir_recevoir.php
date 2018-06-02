@@ -21,6 +21,23 @@
 												</h1>
 											</div><!-- /.page-header -->
 											<div class="page-content">
+
+												<?php if(empty($partage)){ ?>
+													<div class="center">
+													<h3 style="color:cornflowerblue; ">Vous n'avez rien de programmé. </h3>
+
+													<a href="<?php echo base_url() ?>Partage/assister_partage"
+											   
+												<button type="button" class="btn btn-sm btn-primary btn-white btn-round">
+													<i class="ace-icon fa fa-globe"></i>
+													<span class="bigger-110">Assister à un partage</span>
+
+													<i class="icon-on-right ace-icon fa fa-arrow-right"></i>
+												</button>
+											</a>	</div>
+													<?php }else{ ?>
+
+													
 												<table id="simple-table" class="table  table-bordered table-hover">					
 												<thead>
 												<tr>
@@ -38,17 +55,16 @@
 												</tr>
 											</thead>
 											<tbody>
+													
+															<?php foreach ($partage as $item ){
 
-													<?php foreach ($partage as $item ){
-															
-
-											$ref1 = site_url("Partage/detail_partage/$item->num_partage"); 
+											$ref1 = site_url("Partage/detail_partage_a_recevoir/$item->num_partage"); 
 											$ref2 = site_url("Participer/supp_participation/$item->num_partage"); ?>
 												<tr>
 
 													<td class="center">
 														<div class="action-buttons">
-															<a href=<?php echo $ref1 ?> class="blue bigger-140 show-details-btn" title="Voir le détail">
+															<a href='<?php echo $ref1 ?>' class="blue bigger-140 show-details-btn" title="Voir le détail">
 																<i class="ace-icon fa fa-angle-double-down"></i>
 																<span class="sr-only">Voir le détail</span>
 															</a>
@@ -79,11 +95,13 @@
 
 												</tr>
 												<?php 
-													}
+													}}
 
 															?>
 											</tbody>
 										</table>
+
+											
 
 											<div class="row">
 											<div class="col-xs-12">

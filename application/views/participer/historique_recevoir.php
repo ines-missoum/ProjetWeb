@@ -16,11 +16,17 @@
 													Souvenirs...
 													<small>
 														<i class="ace-icon fa fa-angle-double-right"></i>
-														Voici l'historique des partages auxquels vous avez assisté. Rendez vous dans Notes pour les noter.
+														Voici l'historique des partages auxquels vous avez assisté. Rendez vous dans Notes pour noter ceux qui ne le sont pas.
 													</small>
 												</h1>
 											</div><!-- /.page-header -->
 											<div class="page-content">
+
+												<?php if(empty($partage)){ ?>
+													<div class="center">
+													<h3 style="color:cornflowerblue; ">Vous n'avez pas d'historique, un peu de patience ;) . </h3>
+												</div>
+												<?php }else{ ?>
 												<table id="simple-table" class="table  table-bordered table-hover">					
 												<thead>
 												<tr>
@@ -41,13 +47,13 @@
 													<?php foreach ($partage as $item ){
 															
 
-											$ref = site_url("Partage/detail_partage/$item->num_partage"); ?>
+											$ref = site_url("Partage/detail_partage_recu/$item->num_partage"); ?>
 
 												<tr>
 
 													<td class="center">
 														<div class="action-buttons">
-															<a href=<?php echo $ref ?> class="blue bigger-140 show-details-btn" title="Voir le détail">
+															<a href= <?php echo $ref ?> class="blue bigger-140 show-details-btn" title="Voir le détail">
 																<i class="ace-icon fa fa-angle-double-down"></i>
 																<span class="sr-only">Voir le détail</span>
 															</a>
@@ -66,7 +72,7 @@
 
 												</tr>
 												<?php 
-													}
+													}}
 
 															?>
 											</tbody>

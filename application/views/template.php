@@ -75,55 +75,7 @@
 					
 					<ul class="nav ace-nav">
 
-
 						<li class="grey dropdown-modal">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
-								<span class="badge badge-success">8</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-exclamation-triangle"></i>
-									8 A offrir
-								</li>
-
-
-								<li class="dropdown-footer">
-									<a href="#">
-										Voir tous les talents que j'offre
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="purple dropdown-modal">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-								<span class="badge badge-success">5</span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-flag"></i>
-									5 A recevoir
-								</li>
-
-								<li class="dropdown-content">
-									<ul class="dropdown-menu dropdown-navbar">
-
-								<li class="dropdown-footer">
-									<a href="#">
-										Voir tous les talents que je recois
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-
-						<li class="green dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="<?php echo base_url() ?>ace-master/assets/images/avatars/avatar2.png" alt="Jason's Photo" />
 								<span class="user-info">
@@ -310,42 +262,13 @@
 						</ul>
 					</li>
 
-
 					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-star "></i>
-
-							<span class="menu-text">
-								Notes
-
-								<span class="badge badge-primary">5</span>
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
+						<a href="<?php echo base_url() ?>Note/a_noter">
+							<i class="menu-icon fa fa-star"></i>
+							<span class="menu-text"> A noter </span>
 						</a>
 
 						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="<?php echo base_url() ?>Note/a_noter">
-									<i class="menu-icon fa fa-caret-right"></i>
-									A noter
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="<?php echo base_url() ?>Note/mes_notes">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Mes notes
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-							
-						</ul>
 					</li>
 				</ul><!-- /.nav-list -->
 
@@ -430,7 +353,8 @@
 			jQuery(function($) {
 			
 				$('#spinner2').ace_spinner({value:0,min:1,max:10,step:1, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
-				
+
+				$('#spinner1').ace_spinner({value:0,min:0,max:5,step:1, btn_up_class:'btn-warning' , btn_down_class:'btn-warning'})
 				
 				$('.timepicker').timepicker({
 					minuteStep: 1,
@@ -446,8 +370,6 @@
 				}).next().on(ace.click_event, function(){
 					$(this).prev().focus();
 				});
-				
-				
 			
 				
 				

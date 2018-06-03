@@ -311,8 +311,7 @@ class Utilisateur extends CI_Controller {
                              "prenom" => htmlspecialchars($_POST['prenom']),
                              "ville"=> htmlspecialchars($_POST['ville']),
                              "nb_points"=> 3,
-                             "email"=> htmlspecialchars($_POST['email']),
-                             "a_propos"=> "Pas de description",
+                             "email"=> htmlspecialchars($_POST['email'])
                             );
 
                           

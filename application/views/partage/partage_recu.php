@@ -194,7 +194,7 @@
 											<div class="row">
 											<div class="col-xs-12">	
 
-												<a href="<?php echo base_url() ?>Participer/a_venir_recevoir">
+												<a href="<?php echo base_url() ?>Participer/historique_recevoir">
 												
 															<button type="" class="btn btn-sm btn-primary btn-white btn-round">
 																<i class="icon-on-left ace-icon fa fa-arrow-left"></i>

@@ -33,9 +33,7 @@ class Partage_model extends CI_Model{
 		 						->where('nom_utilisateur !=',$valeur_decrypte)//pas créateur
 		 						->where('daterdv >=',mdate($datestring))//à venir
 		 						->where('places_dispo > 0')//avec des places dispos
-		 						->where('"num_partage" not in','(SELECT "num_partage" FROM "participer" WHERE "nom_utilisateur"=\'' . $valeur_decrypte . '\')',false)
-		 						
-		 						/*->where('num_partage not in', '(select num_partage from participer where nom_utilisateur='.$valeur_decrypte.')')//ou j'ai pas déjà participer*/
+		 						->where('"num_partage" not in','(SELECT "num_partage" FROM "participer" WHERE "nom_utilisateur"=\'' . $valeur_decrypte . '\')',false)//ou j'ai pas déjà participer*/
 		 						->order_by('daterdv')		
 		 						->get()
 		 						->result();
@@ -89,14 +87,6 @@ class Partage_model extends CI_Model{
 	    
 	    public function insert($data) {
 	        
-
-		 	/*$this->db->set('nom_utilisateur', $data['nom_utilisateur'])
-		 	->set('mot_de_passe', $data['mot_de_passe'])
-		 	->set('nom', $data['nom'])
-		 	->set('prenom', $data['prenom'])
-		 	->set('ville', $data['ville'])
-		 	->set('nb_points', $data['nb_points'])
-		 	->insert($this->table);*/
 
 			$this->db->insert('partage', $data);
 

@@ -10,8 +10,6 @@ class Participer_model extends CI_Model{
 		 			  ->set('num_partage', $data['num_partage'])
 		 			  ->insert($this->table);
 
-			/*$this->db->insert('participer', $data);*/
-
 		}
 
 	public function a_venir_recevoir($valeur_decrypte){

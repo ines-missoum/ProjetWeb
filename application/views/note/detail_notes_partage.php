@@ -65,6 +65,15 @@
 											<div class="row">
 											<div class="col-xs-12">
 
+												<a href="<?php echo base_url() ?>Partage/historique_offrir">
+									
+													<button type="" class="btn pull-left btn-sm btn-primary btn-white btn-round">
+														<i class="icon-on-left ace-icon fa fa-arrow-left"></i>
+														<span class="bigger-110">Retour</span>
+													</button>
+
+												</a>
+
 											
 
 

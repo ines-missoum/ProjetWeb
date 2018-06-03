@@ -1,0 +1,17 @@
+/* A inserer dans la db avant utilisation du site*/
+
+INSERT INTO categorie (nom_categorie) VALUES ('Bricolage');
+INSERT INTO categorie (nom_categorie) VALUES ('Cuisine');
+INSERT INTO categorie (nom_categorie) VALUES ('Jardinage');
+INSERT INTO categorie (nom_categorie) VALUES ('Instrument de musique');
+INSERT INTO categorie (nom_categorie) VALUES ('Dessin');
+INSERT INTO categorie (nom_categorie) VALUES ('Sport');
+INSERT INTO categorie (nom_categorie) VALUES ('Mecanique');
+INSERT INTO categorie (nom_categorie) VALUES ('Couture');
+INSERT INTO categorie (nom_categorie) VALUES ('Danse');
+INSERT INTO categorie (nom_categorie) VALUES ('Chant');
+INSERT INTO categorie (nom_categorie) VALUES ('Informatique');
+INSERT INTO categorie (nom_categorie) VALUES ('Langue');
+INSERT INTO categorie (nom_categorie) VALUES ('Autres arts');
+INSERT INTO categorie (nom_categorie) VALUES ('Autre');
+

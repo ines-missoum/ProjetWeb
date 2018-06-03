@@ -1,0 +1,77 @@
+CREATE OR REPLACE FUNCTION creation_partage()
+RETURNS trigger AS $creation_partage$
+  
+	BEGIN
+
+	UPDATE utilisateur 
+	SET nb_points = nb_points+2
+	WHERE nom_utilisateur=NEW.nom_utilisateur;
+
+	RETURN NULL;
+	END;
+	$creation_partage$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER creation_partage
+
+	AFTER INSERT
+	ON partage
+	FOR EACH ROW
+
+EXECUTE PROCEDURE creation_partage();
+
+/************************************************************************/
+
+CREATE OR REPLACE FUNCTION creation_participer()
+RETURNS trigger AS $creation_participer$
+  
+	BEGIN
+
+	UPDATE utilisateur 
+	SET nb_points = nb_points-3
+	WHERE nom_utilisateur=NEW.nom_utilisateur;
+
+	UPDATE partage 
+	SET places_dispo = places_dispo-1
+	WHERE num_partage=NEW.num_partage;
+
+	RETURN NULL;
+	END;
+	$creation_participer$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER creation_participer
+
+	AFTER INSERT
+	ON participer
+	FOR EACH ROW
+
+EXECUTE PROCEDURE creation_participer();
+
+/**********************************************************************/
+
+CREATE OR REPLACE FUNCTION suppression_participer()
+RETURNS trigger AS $suppression_participer$
+  
+	BEGIN
+
+	UPDATE utilisateur 
+	SET nb_points = nb_points+3
+	WHERE nom_utilisateur=OLD.nom_utilisateur;
+
+	UPDATE partage 
+	SET places_dispo = places_dispo+1
+	WHERE num_partage=OLD.num_partage;
+
+	RETURN NULL;
+	END;
+	$suppression_participer$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER suppression_participer
+
+	AFTER DELETE
+	ON participer
+	FOR EACH ROW
+
+EXECUTE PROCEDURE suppression_participer();

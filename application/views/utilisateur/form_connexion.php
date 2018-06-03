@@ -75,6 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 											<?php echo form_open('Utilisateur/verif_connexion'); ?>
 												<fieldset>
+													<?php if($inscription): ?>
+														<h6 style="color:green;">Vous vous êtes inscrit avec succès. Vous pouvez maintenant vous connecter.</h6>
+													<?php endif ?>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="text" name="username" class="form-control" placeholder="Identifiant" value="<?php echo set_value('username') ?>" required />
@@ -116,11 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 										<div class="toolbar clearfix">
 											<div>
-												<a href="<?php echo base_url() ?>Utilisateur/oubli_mdp"  class="forgot-password-link">
-													<i class="ace-icon fa fa-arrow-left"></i>
-													Mot de passe oublié
-													
-												</a>
+												
 											</div>
 
 											<div>
@@ -130,6 +129,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												</a>
 											</div>
 										</div>
+
+										
 									</div><!-- /.widget-body -->
 								</div><!-- /.login-box -->
 

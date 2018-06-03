@@ -106,7 +106,7 @@
 													<label class="col-sm-3 control-label no-padding-right" > Heure de fin du partage </label>
 													<div class="col-sm-4">
 														<div class="input-group bootstrap-timepicker">
-															<input type="time" name="h_fin"   class="form-control" value="<?php echo set_value('h_fin') ?>" required />
+															<input type="time" name="h_fin"   class="form-control" value="<?php echo set_value('h_fin') ?>" min="<?php echo set_value('h_debut') ?>" required />
 															<span class="input-group-addon">
 																<i class="fa fa-clock-o bigger-110"></i>
 															</span>

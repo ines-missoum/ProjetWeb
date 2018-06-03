@@ -8,8 +8,6 @@ class Utilisateur extends CI_Controller {
 
             if( get_cookie('cookieUtilisateur')!=''){
                 
-                //$prenom_utilisateur = $this->utilisateur_model->get_nom();
-
                 // On stocke notre page dans la variable $page
                 $page = $this->load->view('utilisateur/accueil','',true);
 
@@ -150,7 +148,7 @@ class Utilisateur extends CI_Controller {
 
                 if(empty($result)){
                     
-                    $ok=false;
+                    $ok=false;// mot de passe ou id invalide
                     $inscription=false;
                     $this->load->view('utilisateur/form_connexion',array('ok'=>$ok, 'inscription'=>$inscription));
 
@@ -300,6 +298,7 @@ class Utilisateur extends CI_Controller {
                             $this->load->view('utilisateur/form_inscription');
                     }else{
 
+                        // on crypte le mdp
                         define("PREFIXE", "mysteremystere");
                         define("SUFFIXE", "etbouledegomme");
                         $mdpCrypte= md5( sha1(PREFIXE) . htmlspecialchars($_POST['password']) . sha1(SUFFIXE) );//sha1, md5 : algo de hachages (md5=50caracteres)
@@ -317,7 +316,7 @@ class Utilisateur extends CI_Controller {
                           
                            $this->Utilisateur_model->insert($data);
                            $ok=true;
-                           $inscription=true;
+                           $inscription=true;//inscription ok 
                            $this->load->view('utilisateur/form_connexion',array('ok'=>$ok, 'inscription'=>$inscription));
                     }
 

@@ -12,7 +12,7 @@ class Note extends CI_Controller {
          public function detail_notes_partage($id_partage){
 
              if( get_cookie('cookieUtilisateur')!=''){
-
+                
                 $valeur_decrypte = $this->encryption->decrypt(get_cookie('cookieUtilisateur'));
 
                 $result['note'] = $this->Note_model->get_notes_partages($id_partage, $valeur_decrypte);

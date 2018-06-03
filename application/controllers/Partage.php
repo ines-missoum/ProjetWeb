@@ -34,7 +34,7 @@ class Partage extends CI_Controller {
 
 
                     if ($this->form_validation->run() == FALSE){
-                    
+                    // si les regles du formulaires ne sont pas respectées on recharge le formulaire
 
                         $categories['cat']=$this->Categorie_model->categories();
 

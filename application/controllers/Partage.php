@@ -12,9 +12,25 @@ class Partage extends CI_Controller {
 
             if( get_cookie('cookieUtilisateur')!=''){ 
 
-                
+                    $this->form_validation->set_rules('intitule', 'Intitule', 'max_length[30]',
+                    array(
+                    'max_length'     => "Pas plus de 30 caractères"
+                            )
+                    );
 
-                    $this->form_validation->set_rules('intitule', 'Intitule', 'required');
+                    $this->form_validation->set_rules('ville', 'Ville', 'max_length[50]',
+                    array(
+                    'max_length'     => "Pas plus de 50 caractères"
+                            )
+                    );
+
+                    $this->form_validation->set_rules('rue', 'Rue', 'max_length[50]',
+                    array(
+                    'max_length'     => "Pas plus de 50 caractères"
+                            )
+                    );
+
+                   
 
 
                     if ($this->form_validation->run() == FALSE){

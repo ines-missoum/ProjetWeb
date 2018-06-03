@@ -121,9 +121,9 @@ class Utilisateur extends CI_Controller {
 
             if( get_cookie('cookieUtilisateur')==''){
 
-            $ok=true;
-
-              $this->load->view('utilisateur/form_connexion',array('ok'=>$ok));  
+                $ok=true;
+                $inscription=false;
+                $this->load->view('utilisateur/form_connexion',array('ok'=>$ok, 'inscription'=>$inscription));
 
             }else{
 
@@ -151,7 +151,8 @@ class Utilisateur extends CI_Controller {
                 if(empty($result)){
                     
                     $ok=false;
-                    $this->load->view('utilisateur/form_connexion',array('ok'=>$ok));
+                    $inscription=false;
+                    $this->load->view('utilisateur/form_connexion',array('ok'=>$ok, 'inscription'=>$inscription));
 
                 }else{
 
@@ -174,20 +175,6 @@ class Utilisateur extends CI_Controller {
         }
 
 
-
-        public function oubli_mdp(){ 
-
-            if( get_cookie('cookieUtilisateur')==''){
-
-                $this->load->view('utilisateur/form_oubli_mdp');
-
-            }else{
-
-                $this->index();
-                
-            }
-
-        }
 
         public function valid_modif(){
 
@@ -330,7 +317,9 @@ class Utilisateur extends CI_Controller {
 
                           
                            $this->Utilisateur_model->insert($data);
-                           $this->index();
+                           $ok=true;
+                           $inscription=true;
+                           $this->load->view('utilisateur/form_connexion',array('ok'=>$ok, 'inscription'=>$inscription));
                     }
 
                 }else{
